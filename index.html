@@ -1,99 +1,692 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    body {background-color: #090909}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p3 {margin: 0.0px 0.0px 32.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p5 {margin: 0.0px 0.0px 56.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #090909; -webkit-text-stroke: #090909}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38); background-color: #0d0d0d}
-    p.p8 {margin: 0.0px 0.0px 20.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.18); -webkit-text-stroke: rgba(236, 233, 226, 0.18)}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Apple SD Gothic Neo'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2; background-color: #ffffff; background-color: rgba(255, 255, 255, 0.059); min-height: 15.0px}
-    p.p19 {margin: 0.0px 0.0px 16.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2}
-    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p23 {margin: 0.0px 0.0px 20.0px 0.0px; text-align: center; font: 9.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 48.0px 'Helvetica Neue'; color: #bc993c; -webkit-text-stroke: #bc993c}
-    p.p25 {margin: 0.0px 143.5px 40.0px 143.5px; text-align: center; text-indent: -143.5px; font: 11.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: rgba(236, 233, 226, 0.38)}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px 'Helvetica Neue'; color: #090909; -webkit-text-stroke: #090909}
-    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.18); -webkit-text-stroke: rgba(236, 233, 226, 0.18)}
-    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 9.0px 'Helvetica Neue'; color: #ece9e2; color: rgba(236, 233, 226, 0.18); -webkit-text-stroke: rgba(236, 233, 226, 0.18)}
-    span.s1 {font-kerning: none}
-    span.s2 {font-kerning: none; color: #bc993c; -webkit-text-stroke: 0px #bc993c}
-    span.s3 {font: 11.0px 'Helvetica Neue'; font-kerning: none; color: rgba(236, 233, 226, 0.38); -webkit-text-stroke: 0px rgba(236, 233, 226, 0.38)}
-    span.s4 {font-kerning: none; background-color: #bc993c}
-    span.s5 {font: 12.0px 'Helvetica Neue'; font-kerning: none; color: #ece9e2; -webkit-text-stroke: 0px #ece9e2}
-    span.s6 {font-kerning: none; background-color: #0d0d0d}
-    span.s7 {font-kerning: none; color: #bc993c; background-color: #0d0d0d; -webkit-text-stroke: 0px #bc993c}
-    span.s8 {font-kerning: none; background-color: #090909}
-    span.s9 {font: 48.0px 'Helvetica Neue'; font-kerning: none; color: #bc993c; -webkit-text-stroke: 0px #bc993c}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InvestingWithVince</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #080808;
+    --surface: #0f0f0f;
+    --surface-2: #151515;
+    --border: rgba(255,255,255,0.06);
+    --border-hover: rgba(255,255,255,0.14);
+    --gold: #c9a84c;
+    --gold-dim: rgba(201,168,76,0.12);
+    --gold-glow: rgba(201,168,76,0.06);
+    --white: #f0ede8;
+    --muted: rgba(240,237,232,0.38);
+    --muted-2: rgba(240,237,232,0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    border-color: var(--border);
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-x {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-x:hover { color: var(--gold); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle radial glow */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(52px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    max-width: 400px;
+    line-height: 1.8;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: #e0bc5a;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid var(--border-hover);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  /* Stats bar */
+  .stats-bar {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+  .stat-item {}
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-value span { color: var(--gold); }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 48px;
+  }
+
+  /* Section */
+  section {
+    padding: 100px 48px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 64px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .product-card {
+    background: var(--surface);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold-glow);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .product-card:hover { background: var(--surface-2); }
+  .product-card:hover::before { opacity: 1; }
+
+  .product-number {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--muted-2);
+    margin-bottom: 32px;
+  }
+
+  .product-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    color: var(--gold);
+    font-size: 16px;
+  }
+
+  .product-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .product-desc {
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 32px;
+    flex: 1;
+  }
+
+  .product-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .product-badge {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--border-hover);
+    color: var(--muted);
+  }
+  .product-badge.free {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--gold);
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: gap 0.2s;
+  }
+  .product-link:hover { gap: 14px; }
+
+  /* Philosophy section */
+  .philosophy {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .philosophy-text p {
+    font-size: 11px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .philosophy-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--white);
+    border-left: 1px solid var(--gold);
+    padding-left: 32px;
+  }
+
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 64px;
+  }
+  .pillar {
+    background: var(--black);
+    padding: 36px 32px;
+  }
+  .pillar-num {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .pillar-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .pillar-desc {
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  /* X / Social */
+  .social-section {
+    text-align: center;
+    padding: 100px 48px;
+  }
+  .x-handle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 6vw, 80px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+    margin: 24px 0;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .x-handle:hover { opacity: 0.7; }
+  .social-desc {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    max-width: 400px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+  }
+
+  /* Footer */
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+  .footer-copy {
+    font-size: 10px;
+    color: var(--muted-2);
+    letter-spacing: 0.1em;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: var(--muted-2);
+    letter-spacing: 0.05em;
+    max-width: 500px;
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Scrolling ticker */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    background: var(--surface);
+  }
+  .ticker {
+    display: flex;
+    gap: 80px;
+    animation: ticker 20s linear infinite;
+    width: max-content;
+  }
+  .ticker-item {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .ticker-item::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 6px;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 768px) {
+    nav, section, .hero { padding-left: 24px; padding-right: 24px; }
+    .section-divider { margin: 0 24px; }
+    .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .pillars { grid-template-columns: 1fr; }
+    .stats-bar { gap: 32px; }
+    footer { flex-direction: column; }
+    .footer-disclaimer { text-align: left; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">INVESTING</span><span class="s2">VINCE</span></p>
-<p class="p2"><span class="s1"><a href="https://x.com/InvestingVince">@INVESTINGVINCE ↗<span class="s3"></span></a></span></p>
-<p class="p3"><span class="s1">SYSTEMATIC TRADING · DIGITAL PRODUCTS · REAL RESULTS</span></p>
-<h1 style="margin: 0.0px 0.0px 40.0px 0.0px; font: 64.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2"><span class="s1">Trade with<br>
-</span><span class="s2">discipline.</span><span class="s1"><br>
-Build with<br>
-purpose.</span></h1>
-<p class="p5"><span class="s1">A trading system, a growing portfolio, and the tools to help you do the same. No noise. No hype. Just process.</span></p>
-<p class="p6"><span class="s4">EXPLORE PRODUCTS →</span><span class="s5"> <a href="https://x.com/InvestingVince"><span class="s3">FOLLOW ON X ↗</span></a></span></p>
-<p class="p7"><span class="s1">BREAKOUT BLUEPRINT</span><span class="s5"> </span><span class="s1">TRADING JOURNAL</span><span class="s5"> </span><span class="s1">SYSTEMATIC EDGE</span><span class="s5"> </span><span class="s1">@INVESTINGVINCE</span><span class="s5"> </span><span class="s1">BREAKOUT BLUEPRINT</span><span class="s5"> </span><span class="s1">TRADING JOURNAL</span><span class="s5"> </span><span class="s1">SYSTEMATIC EDGE</span><span class="s5"> </span><span class="s1">@INVESTINGVINCE</span></p>
-<p class="p8"><span class="s1">PRODUCTS</span></p>
-<h2 style="margin: 0.0px 0.0px 64.0px 0.0px; font: 40.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2"><span class="s1">Everything you need<br>
-to </span><span class="s2">trade systematically.</span></h2>
-<p class="p10"><span class="s6">01</span></p>
-<p class="p11"><span class="s6">▣</span></p>
-<p class="p12"><span class="s6">Trading Journal</span></p>
-<p class="p2"><span class="s6">100 pages. 90 trading days. Built for traders who take their edge seriously. Pre-market checklists, trade logs, P&amp;L tracking, execution scoring, weekly and monthly reviews — all in one physical book.</span></p>
-<p class="p13"><span class="s6">£35</span></p>
-<p class="p14"><span class="s6">PHYSICAL</span></p>
-<p class="p15"><span class="s6">ORDER NOW →</span></p>
-<p class="p10"><span class="s6">02</span></p>
-<p class="p11"><span class="s6">◈</span></p>
-<p class="p12"><span class="s6">The Breakout Blueprint</span></p>
-<p class="p2"><span class="s6">The complete system. 50WMA filter, 10WMA management, base formation, breakout entries, risk management — every rule written down. This is the foundation of the InvestingWithVince methodology.</span></p>
-<p class="p13"><span class="s6">Free</span></p>
-<p class="p16"><span class="s6">DIGITAL</span></p>
-<p class="p15"><span class="s6">DOWNLOAD NOW →</span></p>
-<p class="p17"><span class="s1"></span><br></p>
-<p class="p8"><span class="s6">THE APPROACH</span></p>
-<h2 style="margin: 0.0px 0.0px 32.0px 0.0px; font: 40.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2"><span class="s6">System over</span><span class="s1"><br>
-</span><span class="s7">emotion.</span></h2>
-<p class="p19"><span class="s6">Most traders lose because they let emotion override process. A bad day becomes a blown account. A good week becomes overconfidence. The market exploits both.</span></p>
-<p class="p19"><span class="s6">The InvestingWithVince system removes the guesswork. Rules-based entries. Hard stops. Systematic position sizing. The same process, every day, regardless of how it feels.</span></p>
-<p class="p19"><span class="s6">Consistency compounds. Discipline builds accounts. That's the only edge worth having.</span></p>
-<blockquote style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #ece9e2; -webkit-text-stroke: #ece9e2"><span class="s6">"The market doesn't care about your opinion. It only rewards your process."</span></blockquote>
-<p class="p16"><span class="s8">01</span></p>
-<p class="p21"><span class="s8">Active Trading</span></p>
-<p class="p22"><span class="s8">Day trades + swing trades. Systematic entries. 8-10% hard stop. No exceptions.</span></p>
-<p class="p16"><span class="s8">02</span></p>
-<p class="p21"><span class="s8">S&amp;P Strategy</span></p>
-<p class="p22"><span class="s8">70% of capital. 50WMA filter. Long-term compounding engine running in the background.</span></p>
-<p class="p16"><span class="s8">03</span></p>
-<p class="p21"><span class="s8">Education</span></p>
-<p class="p22"><span class="s8">Tools, journals, and frameworks to give you the same systematic edge.</span></p>
-<p class="p17"><span class="s1"></span><br></p>
-<p class="p23"><span class="s1">FOLLOW THE JOURNEY</span></p>
-<p class="p24"><span class="s1"><a href="https://x.com/InvestingVince">@InvestingVince<span class="s9"></span></a></span></p>
-<p class="p25"><span class="s1">Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.</span></p>
-<p class="p26"><span class="s4"><a href="https://x.com/InvestingVince">FOLLOW ON X →<span class="s1"></span></a></span></p>
-<p class="p27"><span class="s1">© 2026 InvestingWithVince. All rights reserved.</span></p>
-<p class="p28"><span class="s1">For educational purposes only. Not financial advice. Trading involves significant risk of loss. Past performance is not indicative of future results.</span></p>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="nav-logo">Investing<span>Vince</span></div>
+  <a href="https://x.com/InvestingVince" target="_blank" class="nav-x">@InvestingVince ↗</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-eyebrow">Systematic Trading · Digital Products · Real Results</p>
+  <h1 class="hero-headline">
+    Trade with<br><em>discipline.</em><br>Build with<br>purpose.
+  </h1>
+  <p class="hero-sub">
+    A trading system, a growing portfolio, and the tools to help you do the same. No noise. No hype. Just process.
+  </p>
+  <div class="hero-cta">
+    <a href="#products" class="btn-primary">Explore Products →</a>
+    <a href="https://x.com/InvestingVince" target="_blank" class="btn-ghost">Follow on X ↗</a>
+  </div>
+
+</section>
+
+<!-- Ticker -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Breakout Blueprint</span>
+    <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">@InvestingVince</span>
+    <span class="ticker-item">Breakout Blueprint</span>
+    <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">@InvestingVince</span>
+  </div>
+</div>
+
+<!-- Products -->
+<section id="products">
+  <p class="section-label reveal">Products</p>
+  <h2 class="section-title reveal">Everything you need<br>to <em>trade systematically.</em></h2>
+
+  <div class="products-grid">
+
+    <!-- Journal -->
+    <div class="product-card reveal">
+      <div class="product-number">01</div>
+      <div class="product-icon">▣</div>
+      <div class="product-name">Trading Journal</div>
+      <div class="product-desc">
+        100 pages. 90 trading days. Built for traders who take their edge seriously. Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews — all in one physical book.
+      </div>
+      <div class="product-meta">
+        <div class="product-price">£35</div>
+        <div class="product-badge">Physical</div>
+      </div>
+      <a href="#" class="product-link">Order Now →</a>
+    </div>
+
+    <!-- Ebook -->
+    <div class="product-card reveal">
+      <div class="product-number">02</div>
+      <div class="product-icon">◈</div>
+      <div class="product-name">The Breakout Blueprint</div>
+      <div class="product-desc">
+        The complete system. 50WMA filter, 10WMA management, base formation, breakout entries, risk management — every rule written down. This is the foundation of the InvestingWithVince methodology.
+      </div>
+      <div class="product-meta">
+        <div class="product-price">Free</div>
+        <div class="product-badge free">Digital</div>
+      </div>
+      <a href="#" class="product-link">Download Now →</a>
+    </div>
+
+
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Philosophy -->
+<section class="philosophy">
+  <div class="philosophy-grid">
+    <div>
+      <p class="section-label reveal">The Approach</p>
+      <h2 class="section-title reveal" style="margin-bottom: 32px;">System over<br><em>emotion.</em></h2>
+      <div class="philosophy-text reveal">
+        <p>Most traders lose because they let emotion override process. A bad day becomes a blown account. A good week becomes overconfidence. The market exploits both.</p>
+        <p>The InvestingWithVince system removes the guesswork. Rules-based entries. Hard stops. Systematic position sizing. The same process, every day, regardless of how it feels.</p>
+        <p>Consistency compounds. Discipline builds accounts. That's the only edge worth having.</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <blockquote class="philosophy-quote">
+        "The market doesn't care about your opinion. It only rewards your process."
+      </blockquote>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <div class="pillar-title">Active Trading</div>
+          <div class="pillar-desc">Day trades + swing trades. Systematic entries. 8-10% hard stop. No exceptions.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <div class="pillar-title">S&P Strategy</div>
+          <div class="pillar-desc">70% of capital. 50WMA filter. Long-term compounding engine running in the background.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <div class="pillar-title">Education</div>
+          <div class="pillar-desc">Tools, journals, and frameworks to give you the same systematic edge.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Social CTA -->
+<section class="social-section">
+  <p class="section-label reveal">Follow The Journey</p>
+  <a href="https://x.com/InvestingVince" target="_blank" class="x-handle reveal">@InvestingVince</a>
+  <p class="social-desc reveal">
+    Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.
+  </p>
+  <a href="https://x.com/InvestingVince" target="_blank" class="btn-primary reveal">Follow on X →</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-copy">© 2026 InvestingWithVince. All rights reserved.</div>
+  <div class="footer-disclaimer">
+    For educational purposes only. Not financial advice. Trading involves significant risk of loss. Past performance is not indicative of future results.
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
