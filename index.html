@@ -12,6 +12,13 @@
   gtag('js', new Date());
   gtag('config', 'G-K909NVWPMX');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EJPZ0534JG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EJPZ0534JG');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Mono:wght@300;400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,6 +49,10 @@
     overflow-x: hidden;
   }
 
+  /* Grain overlay */
+
+
+  /* Nav */
   nav {
     position: fixed;
     top: 0;
@@ -79,6 +90,7 @@
   }
   .nav-x:hover { color: var(--gold); }
 
+  /* Hero */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -89,6 +101,7 @@
     overflow: hidden;
   }
 
+  /* Subtle radial glow */
   .hero::after {
     content: '';
     position: absolute;
@@ -121,7 +134,10 @@
     opacity: 0;
     animation: fadeUp 0.8s ease 0.4s forwards;
   }
-  .hero-headline em { font-style: italic; color: var(--gold); }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
 
   .hero-sub {
     font-size: 12px;
@@ -157,7 +173,10 @@
     font-weight: 400;
     transition: all 0.2s ease;
   }
-  .btn-primary:hover { background: #e0bc5a; transform: translateY(-1px); }
+  .btn-primary:hover {
+    background: #e0bc5a;
+    transform: translateY(-1px);
+  }
 
   .btn-ghost {
     display: inline-flex;
@@ -173,11 +192,51 @@
     text-decoration: none;
     transition: all 0.2s ease;
   }
-  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-1px);
+  }
 
-  .section-divider { height: 1px; background: var(--border); margin: 0 48px; }
+  /* Stats bar */
+  .stats-bar {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+  .stat-item {}
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-value span { color: var(--gold); }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 
-  section { padding: 100px 48px; }
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 48px;
+  }
+
+  /* Section */
+  section {
+    padding: 100px 48px;
+  }
 
   .section-label {
     font-size: 9px;
@@ -197,6 +256,7 @@
   }
   .section-title em { font-style: italic; color: var(--gold); }
 
+  /* Products grid */
   .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -225,7 +285,12 @@
   .product-card:hover { background: var(--surface-2); }
   .product-card:hover::before { opacity: 1; }
 
-  .product-number { font-size: 9px; letter-spacing: 0.3em; color: var(--muted-2); margin-bottom: 32px; }
+  .product-number {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--muted-2);
+    margin-bottom: 32px;
+  }
 
   .product-icon {
     width: 40px;
@@ -239,8 +304,22 @@
     font-size: 16px;
   }
 
-  .product-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 12px; color: var(--white); }
-  .product-desc { font-size: 11px; line-height: 1.8; color: var(--muted); margin-bottom: 32px; flex: 1; }
+  .product-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .product-desc {
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 32px;
+    flex: 1;
+  }
 
   .product-meta {
     display: flex;
@@ -250,7 +329,12 @@
     border-top: 1px solid var(--border);
   }
 
-  .product-price { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--gold); }
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--gold);
+  }
 
   .product-badge {
     font-size: 9px;
@@ -260,12 +344,45 @@
     border: 1px solid var(--border-hover);
     color: var(--muted);
   }
+  .product-badge.free {
+    border-color: rgba(201,168,76,0.3);
+    color: var(--gold);
+  }
 
-  .philosophy { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 20px;
+    transition: gap 0.2s;
+  }
+  .product-link:hover { gap: 14px; }
 
-  .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  /* Philosophy section */
+  .philosophy {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
 
-  .philosophy-text p { font-size: 11px; line-height: 2; color: var(--muted); margin-bottom: 16px; }
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .philosophy-text p {
+    font-size: 11px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
 
   .philosophy-quote {
     font-family: 'Cormorant Garamond', serif;
@@ -278,13 +395,41 @@
     padding-left: 32px;
   }
 
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 64px; }
-  .pillar { background: var(--black); padding: 36px 32px; }
-  .pillar-num { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 16px; }
-  .pillar-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
-  .pillar-desc { font-size: 10px; line-height: 1.8; color: var(--muted); }
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 64px;
+  }
+  .pillar {
+    background: var(--black);
+    padding: 36px 32px;
+  }
+  .pillar-num {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .pillar-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .pillar-desc {
+    font-size: 10px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
 
-  .social-section { text-align: center; padding: 100px 48px; }
+  /* X / Social */
+  .social-section {
+    text-align: center;
+    padding: 100px 48px;
+  }
   .x-handle {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(40px, 6vw, 80px);
@@ -297,66 +442,127 @@
     transition: opacity 0.2s;
   }
   .x-handle:hover { opacity: 0.7; }
-  .social-desc { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; max-width: 400px; margin: 0 auto 40px; line-height: 1.8; }
+  .social-desc {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    max-width: 400px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+  }
 
+  /* Footer */
   footer {
     padding: 32px 48px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: gap;
     gap: 16px;
-    flex-wrap: wrap;
   }
-  .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
-  .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
+  .footer-copy {
+    font-size: 10px;
+    color: var(--muted-2);
+    letter-spacing: 0.1em;
+  }
+  .footer-disclaimer {
+    font-size: 9px;
+    color: var(--muted-2);
+    letter-spacing: 0.05em;
+    max-width: 500px;
+    line-height: 1.6;
+    text-align: right;
+  }
 
+  /* Animations */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
 
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; background: var(--surface); }
-  .ticker { display: flex; gap: 80px; animation: ticker 25s linear infinite; width: max-content; }
-  .ticker-item { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 16px; }
-  .ticker-item::before { content: '◆'; color: var(--gold); font-size: 6px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
-  .slideshow-wrap { position:relative; max-width:360px; margin:0 auto; }
-  .slideshow { overflow:hidden; }
-  .slide { display:none; }
-  .slide.active { display:block; }
+  /* Scrolling ticker */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    background: var(--surface);
+  }
+  .ticker {
+    display: flex;
+    gap: 80px;
+    animation: ticker 20s linear infinite;
+    width: max-content;
+  }
+  .ticker-item {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .ticker-item::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 6px;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
   @media (max-width: 768px) {
     nav, section, .hero { padding-left: 24px; padding-right: 24px; }
     .section-divider { margin: 0 24px; }
     .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
     .pillars { grid-template-columns: 1fr; }
+    .stats-bar { gap: 32px; }
     footer { flex-direction: column; }
     .footer-disclaimer { text-align: left; }
+    body { cursor: auto; }
+    .cursor, .cursor-ring { display: none; }
   }
 </style>
 </head>
 <body>
 
+<!-- Nav -->
 <nav id="nav">
   <div class="nav-logo">Investing<span>Vince</span></div>
   <a href="https://x.com/InvestingVince" target="_blank" class="nav-x">@InvestingVince ↗</a>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <p class="hero-eyebrow">Systematic Trading · Digital Products · Real Results</p>
-  <h1 class="hero-headline">Trade with<br><em>discipline.</em><br>Build with<br>purpose.</h1>
-  <p class="hero-sub">A trading system, a growing portfolio, and the tools to help you do the same. No noise. No hype. Just process.</p>
+  <h1 class="hero-headline">
+    Trade with<br><em>discipline.</em><br>Build with<br>purpose.
+  </h1>
+  <p class="hero-sub">
+    A trading system, a growing portfolio, and the tools to help you do the same. No noise. No hype. Just process.
+  </p>
   <div class="hero-cta">
     <a href="#products" class="btn-primary">Explore Products →</a>
     <a href="https://x.com/InvestingVince" target="_blank" class="btn-ghost">Follow on X ↗</a>
   </div>
+
 </section>
 
+<!-- Ticker -->
 <div class="ticker-wrap">
   <div class="ticker">
     <span class="ticker-item">Breakout Blueprint</span>
@@ -378,32 +584,45 @@
   </div>
 </div>
 
+<!-- Products -->
 <section id="products">
   <p class="section-label reveal">Products</p>
   <h2 class="section-title reveal">Everything you need<br>to <em>trade systematically.</em></h2>
+
   <div class="products-grid">
+
+    <!-- Journal -->
     <div class="product-card reveal">
       <div class="product-number">01</div>
       <div class="product-icon">▣</div>
       <div class="product-name">Trading Journal</div>
-      <div class="product-desc">100 pages. 90 trading days. Built for traders who take their edge seriously. Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews — all in one physical book.</div>
+      <div class="product-desc">
+        100 pages. 90 trading days. Built for traders who take their edge seriously. Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews — all in one physical book.
+      </div>
       <div class="product-meta">
         <div class="product-price">£34.99</div>
         <div class="product-badge">Physical</div>
       </div>
       <a href="#" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;cursor:pointer;">Coming Soon →</a>
     </div>
+
+    <!-- Ebook -->
     <div class="product-card reveal">
       <div class="product-number">02</div>
       <div class="product-icon">◈</div>
       <div class="product-name">The Breakout Blueprint</div>
-      <div class="product-desc">The complete system. 50WMA filter, 10WMA management, base formation, breakout entries, risk management — every rule written down. This is the foundation of the InvestingWithVince methodology.</div>
+      <div class="product-desc">
+        The complete system. 50WMA filter, 10WMA management, base formation, breakout entries, risk management — every rule written down. This is the foundation of the InvestingWithVince methodology.
+      </div>
       <div class="product-meta">
         <div class="product-price">£29.99</div>
         <div class="product-badge">Digital</div>
       </div>
       <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;cursor:pointer;">Download Now →</a>
     </div>
+
+
+
   </div>
 </section>
 
@@ -413,6 +632,7 @@
 <section style="padding: 100px 48px; text-align: center;">
   <p class="section-label reveal">Verified Results</p>
   <h2 class="section-title reveal" style="margin-bottom: 48px;">The system <em>in action.</em></h2>
+
   <div class="slideshow-wrap reveal">
     <div class="slideshow">
       <div class="slide active" id="slide-0">
@@ -431,8 +651,16 @@
   <p style="font-size:9px;letter-spacing:0.2em;color:rgba(240,237,232,0.2);margin-top:24px;text-transform:uppercase;">Past performance is not indicative of future results</p>
 </section>
 
+<style>
+  .slideshow-wrap { position:relative; max-width:360px; margin:0 auto; }
+  .slideshow { overflow:hidden; }
+  .slide { display:none; }
+  .slide.active { display:block; }
+</style>
+
 <div class="section-divider"></div>
 
+<!-- Philosophy -->
 <section class="philosophy">
   <div class="philosophy-grid">
     <div>
@@ -445,7 +673,9 @@
       </div>
     </div>
     <div class="reveal">
-      <blockquote class="philosophy-quote">"The market doesn't care about your opinion. It only rewards your process."</blockquote>
+      <blockquote class="philosophy-quote">
+        "The market doesn't care about your opinion. It only rewards your process."
+      </blockquote>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-num">01</div>
@@ -481,19 +711,27 @@
 
 <div class="section-divider"></div>
 
+<!-- Social CTA -->
 <section class="social-section">
   <p class="section-label reveal">Follow The Journey</p>
   <a href="https://x.com/InvestingVince" target="_blank" class="x-handle reveal">@InvestingVince</a>
-  <p class="social-desc reveal">Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.</p>
+  <p class="social-desc reveal">
+    Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.
+  </p>
   <a href="https://x.com/InvestingVince" target="_blank" class="btn-primary reveal">Follow on X →</a>
 </section>
 
+<!-- Footer -->
 <footer>
   <div class="footer-copy">© 2026 InvestingWithVince. All rights reserved.</div>
-  <div class="footer-disclaimer">For educational purposes only. Not financial advice. Trading involves significant risk of loss. Past performance is not indicative of future results.</div>
+  <div class="footer-disclaimer">
+    For educational purposes only. Not financial advice. Trading involves significant risk of loss. Past performance is not indicative of future results.
+  </div>
 </footer>
 
 <script>
+// Nav scroll
+  // Slideshow
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slide');
 
@@ -506,11 +744,12 @@
 
   setInterval(() => changeSlide(1), 4000);
 
-  const nav = document.getElementById('nav');
+
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 
+  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
