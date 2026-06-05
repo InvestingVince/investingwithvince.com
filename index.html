@@ -34,7 +34,6 @@
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--white); font-family: 'DM Mono', monospace; font-weight: 300; overflow-x: hidden; }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
   nav.scrolled { border-color: var(--border); background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); }
   .nav-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); }
@@ -42,7 +41,6 @@
   .nav-x { font-size: 11px; letter-spacing: 0.15em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
   .nav-x:hover { color: var(--gold); }
 
-  /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 48px 80px; position: relative; overflow: hidden; }
   .hero::after { content: ''; position: absolute; top: 20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%); pointer-events: none; }
   .hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards; }
@@ -51,8 +49,6 @@
   .hero-headline em { font-style: italic; color: var(--gold); }
   .hero-sub { font-size: 12px; letter-spacing: 0.08em; color: var(--muted); max-width: 400px; line-height: 1.8; margin-bottom: 48px; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
-
-  /* STATS BLOCK */
   .hero-stats { padding-left: 48px; border-left: 1px solid var(--border); display: flex; flex-direction: column; }
   .stat-item { display: flex; flex-direction: column; }
   .stat-item + .stat-item { border-top: 1px solid var(--border); padding-top: 32px; margin-top: 32px; }
@@ -60,39 +56,48 @@
   .stat-number .stat-suffix { font-size: clamp(24px, 2.5vw, 36px); letter-spacing: -0.01em; }
   .stat-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 
-  /* BUTTONS */
   .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--gold); color: var(--black); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: all 0.2s ease; }
   .btn-primary:hover { background: #e0bc5a; transform: translateY(-1px); }
   .btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border: 1px solid var(--border-hover); color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s ease; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
 
-  /* LAYOUT */
   .section-divider { height: 1px; background: var(--border); margin: 0 48px; }
   section { padding: 100px 48px; }
   .section-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
   .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 64px; }
   .section-title em { font-style: italic; color: var(--gold); }
 
-  /* TICKER */
   .ticker-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; background: var(--surface); }
   .ticker { display: flex; gap: 80px; animation: ticker 25s linear infinite; width: max-content; }
   .ticker-item { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 16px; }
   .ticker-item::before { content: '◆'; color: var(--gold); font-size: 6px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ABOUT */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 
-  /* SLIDESHOW */
+  /* JOURNAL SHOWCASE */
+  .journal-showcase { position: relative; overflow: hidden; height: 560px; }
+  .journal-showcase img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: brightness(0.75); }
+  .journal-showcase-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.4) 50%, rgba(8,8,8,0.1) 100%); }
+  .journal-showcase-content { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 80px; }
+  .journal-showcase-inner { max-width: 480px; }
+  .journal-showcase-inner .section-label { margin-bottom: 16px; }
+  .journal-showcase-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 4vw, 60px); line-height: 1; letter-spacing: -0.01em; color: var(--white); margin-bottom: 4px; }
+  .journal-showcase-title strong { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(36px, 4vw, 60px); display: block; letter-spacing: 0.04em; text-transform: uppercase; }
+  .journal-showcase-title span { display: block; font-size: clamp(20px, 2vw, 28px); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 300; margin-top: 4px; }
+  .journal-stats { display: flex; gap: 32px; margin: 28px 0; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .journal-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--gold); line-height: 1; }
+  .journal-stat-label { font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .journal-desc { font-size: 11px; line-height: 1.9; color: var(--muted); margin-bottom: 28px; max-width: 380px; }
+  .journal-price { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--gold); margin-bottom: 20px; }
+
   .slideshow-wrap { position: relative; max-width: 360px; margin: 0 auto; }
   .slideshow { overflow: hidden; }
   .slide { display: none; }
   .slide.active { display: block; }
 
-  /* EBOOK PREVIEW */
   .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-  /* PRODUCTS */
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); }
   .product-card { background: var(--surface); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; display: flex; flex-direction: column; }
   .product-card::before { content: ''; position: absolute; inset: 0; background: var(--gold-glow); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
@@ -106,7 +111,6 @@
   .product-price { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--gold); }
   .product-badge { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border-hover); color: var(--muted); }
 
-  /* PHILOSOPHY */
   .philosophy { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 100px 48px; }
   .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
   .philosophy-text p { font-size: 11px; line-height: 2; color: var(--muted); margin-bottom: 16px; }
@@ -117,23 +121,19 @@
   .pillar-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
   .pillar-desc { font-size: 10px; line-height: 1.8; color: var(--muted); }
 
-  /* SOCIAL */
   .social-section { text-align: center; padding: 100px 48px; }
   .x-handle { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 80px); font-weight: 300; font-style: italic; color: var(--gold); display: block; margin: 24px 0; text-decoration: none; transition: opacity 0.2s; }
   .x-handle:hover { opacity: 0.7; }
   .social-desc { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; max-width: 400px; margin: 0 auto 40px; line-height: 1.8; }
 
-  /* FOOTER */
   footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
   .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
 
-  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 20px; }
     .nav-logo { font-size: 12px; }
@@ -166,6 +166,11 @@
     .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
     .section-title { margin-bottom: 32px; }
     section a[style*="inline-block"] { display: block !important; text-align: center; width: 100%; }
+    .journal-showcase { height: 480px; }
+    .journal-showcase-content { padding: 0 24px; align-items: flex-end; padding-bottom: 40px; }
+    .journal-showcase-overlay { background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.1) 100%); }
+    .journal-stats { gap: 20px; }
+    .journal-desc { font-size: 10px; }
   }
   @media (max-width: 380px) {
     .hero-headline { font-size: 42px; }
@@ -229,7 +234,6 @@
   </div>
 </div>
 
-<!-- About -->
 <section>
   <div class="about-grid">
     <div>
@@ -273,7 +277,6 @@
 
 <div class="section-divider"></div>
 
-<!-- Ebook Preview -->
 <section>
   <p class="section-label reveal">Inside The Blueprint</p>
   <h2 class="section-title reveal" style="margin-bottom:16px;">A look <em>inside.</em></h2>
@@ -305,6 +308,41 @@
     <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Get The Blueprint — £29.99 →</a>
   </div>
 </section>
+
+<div class="section-divider"></div>
+
+<!-- JOURNAL SHOWCASE — full bleed image with overlay copy -->
+<div class="journal-showcase reveal">
+  <img src="journal-hero.png" alt="The Trading Journal by InvestingWithVince">
+  <div class="journal-showcase-overlay"></div>
+  <div class="journal-showcase-content">
+    <div class="journal-showcase-inner">
+      <p class="section-label">The Physical Journal</p>
+      <div class="journal-showcase-title">
+        The
+        <strong>Trading</strong>
+        <span>Journal</span>
+      </div>
+      <div class="journal-stats">
+        <div>
+          <div class="journal-stat-num">100</div>
+          <div class="journal-stat-label">Pages</div>
+        </div>
+        <div>
+          <div class="journal-stat-num">90</div>
+          <div class="journal-stat-label">Trade Days</div>
+        </div>
+        <div>
+          <div class="journal-stat-num">1</div>
+          <div class="journal-stat-label">System</div>
+        </div>
+      </div>
+      <p class="journal-desc">Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews. Everything your process demands — in one physical book.</p>
+      <div class="journal-price">£34.99</div>
+      <a href="#" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Coming Soon →</a>
+    </div>
+  </div>
+</div>
 
 <div class="section-divider"></div>
 
