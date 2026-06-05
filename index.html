@@ -31,30 +31,60 @@
     --muted: rgba(240,237,232,0.38);
     --muted-2: rgba(240,237,232,0.18);
   }
+
   html { scroll-behavior: smooth; }
   body { background: var(--black); color: var(--white); font-family: 'DM Mono', monospace; font-weight: 300; overflow-x: hidden; }
+
+  /* ── NAV ── */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: border-color 0.3s, background 0.3s; }
   nav.scrolled { border-color: var(--border); background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); }
   .nav-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); }
   .nav-logo span { color: var(--gold); }
   .nav-x { font-size: 11px; letter-spacing: 0.15em; color: var(--muted); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
   .nav-x:hover { color: var(--gold); }
+
+  /* ── HERO ── */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 48px 80px; position: relative; overflow: hidden; }
   .hero::after { content: ''; position: absolute; top: 20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%); pointer-events: none; }
   .hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease 0.2s forwards; }
-  .hero-headline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(52px, 8vw, 110px); line-height: 0.95; letter-spacing: -0.02em; max-width: 900px; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
+  .hero-headline { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(48px, 8vw, 110px); line-height: 0.95; letter-spacing: -0.02em; max-width: 900px; margin-bottom: 40px; opacity: 0; animation: fadeUp 0.8s ease 0.4s forwards; }
   .hero-headline em { font-style: italic; color: var(--gold); }
   .hero-sub { font-size: 12px; letter-spacing: 0.08em; color: var(--muted); max-width: 400px; line-height: 1.8; margin-bottom: 56px; opacity: 0; animation: fadeUp 0.8s ease 0.6s forwards; }
   .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s ease 0.8s forwards; }
+
+  /* ── BUTTONS ── */
   .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--gold); color: var(--black); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: all 0.2s ease; }
   .btn-primary:hover { background: #e0bc5a; transform: translateY(-1px); }
   .btn-ghost { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border: 1px solid var(--border-hover); color: var(--muted); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s ease; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+  /* ── LAYOUT UTILS ── */
   .section-divider { height: 1px; background: var(--border); margin: 0 48px; }
   section { padding: 100px 48px; }
   .section-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
   .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 64px; }
   .section-title em { font-style: italic; color: var(--gold); }
+
+  /* ── TICKER ── */
+  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; background: var(--surface); }
+  .ticker { display: flex; gap: 80px; animation: ticker 25s linear infinite; width: max-content; }
+  .ticker-item { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 16px; }
+  .ticker-item::before { content: '◆'; color: var(--gold); font-size: 6px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── ABOUT SECTION ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+  /* ── RESULTS / SLIDESHOW ── */
+  .slideshow-wrap { position: relative; max-width: 360px; margin: 0 auto; }
+  .slideshow { overflow: hidden; }
+  .slide { display: none; }
+  .slide.active { display: block; }
+
+  /* ── EBOOK PREVIEW ── */
+  .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  /* ── PRODUCTS ── */
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); }
   .product-card { background: var(--surface); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; display: flex; flex-direction: column; }
   .product-card::before { content: ''; position: absolute; inset: 0; background: var(--gold-glow); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
@@ -67,42 +97,101 @@
   .product-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 24px; border-top: 1px solid var(--border); }
   .product-price { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--gold); }
   .product-badge { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--border-hover); color: var(--muted); }
+
+  /* ── PHILOSOPHY ── */
   .philosophy { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 100px 48px; }
   .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1100px; margin: 0 auto; }
   .philosophy-text p { font-size: 11px; line-height: 2; color: var(--muted); margin-bottom: 16px; }
-  .philosophy-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 300; font-style: italic; line-height: 1.3; color: var(--white); border-left: 1px solid var(--gold); padding-left: 32px; }
+  .philosophy-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 40px); font-weight: 300; font-style: italic; line-height: 1.3; color: var(--white); border-left: 1px solid var(--gold); padding-left: 32px; }
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 64px; min-width: 0; }
   .pillar { background: var(--black); padding: 36px 32px; }
   .pillar-num { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 16px; }
   .pillar-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
   .pillar-desc { font-size: 10px; line-height: 1.8; color: var(--muted); }
+
+  /* ── SOCIAL ── */
   .social-section { text-align: center; padding: 100px 48px; }
-  .x-handle { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 80px); font-weight: 300; font-style: italic; color: var(--gold); display: block; margin: 24px 0; text-decoration: none; transition: opacity 0.2s; }
+  .x-handle { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 80px); font-weight: 300; font-style: italic; color: var(--gold); display: block; margin: 24px 0; text-decoration: none; transition: opacity 0.2s; }
   .x-handle:hover { opacity: 0.7; }
   .social-desc { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; max-width: 400px; margin: 0 auto 40px; line-height: 1.8; }
+
+  /* ── FOOTER ── */
   footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
   .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
+
+  /* ── ANIMATIONS ── */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
-  .ticker-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; background: var(--surface); }
-  .ticker { display: flex; gap: 80px; animation: ticker 25s linear infinite; width: max-content; }
-  .ticker-item { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; display: flex; align-items: center; gap: 16px; }
-  .ticker-item::before { content: '◆'; color: var(--gold); font-size: 6px; }
-  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  .slideshow-wrap { position: relative; max-width: 360px; margin: 0 auto; }
-  .slideshow { overflow: hidden; }
-  .slide { display: none; }
-  .slide.active { display: block; }
-  [data-beehiiv-form] { margin: 0 auto !important; }
+
+  /* ══════════════════════════════════════════
+     MOBILE — comprehensive overrides
+  ══════════════════════════════════════════ */
   @media (max-width: 768px) {
-    nav, section, .hero { padding-left: 24px; padding-right: 24px; }
-    .section-divider { margin: 0 24px; }
+
+    /* Nav */
+    nav { padding: 20px 20px; }
+    .nav-logo { font-size: 12px; }
+    .nav-x { font-size: 10px; }
+
+    /* Hero */
+    .hero { padding: 100px 20px 60px; min-height: 100svh; }
+    .hero-eyebrow { font-size: 9px; margin-bottom: 24px; }
+    .hero-sub { font-size: 11px; margin-bottom: 40px; max-width: 100%; }
+    .hero-cta { flex-direction: column; gap: 12px; }
+    .hero-cta a { width: 100%; justify-content: center; text-align: center; }
+
+    /* Dividers */
+    .section-divider { margin: 0 20px; }
+
+    /* Sections */
+    section { padding: 64px 20px; }
+    .social-section { padding: 64px 20px; }
+    .philosophy { padding: 64px 20px; }
+
+    /* About — stack vertically */
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+
+    /* Ebook preview — stack to 1 column */
+    .preview-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Products grid — already auto-fit but force single col on small screens */
+    .products-grid { grid-template-columns: 1fr; }
+    .product-card { padding: 32px 24px; }
+
+    /* Philosophy */
     .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
+    .philosophy-quote { font-size: clamp(20px, 5vw, 28px); padding-left: 20px; }
     .pillars { grid-template-columns: 1fr; }
-    footer { flex-direction: column; }
-    .footer-disclaimer { text-align: left; }
+    .pillar { padding: 24px 20px; }
+
+    /* Results slideshow */
+    .slideshow-wrap { max-width: 100%; }
+    .slide img { height: 260px !important; }
+
+    /* Social */
+    .x-handle { font-size: clamp(32px, 10vw, 52px); word-break: break-word; }
+    .social-desc { max-width: 100%; }
+
+    /* Footer */
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    .footer-disclaimer { text-align: left; max-width: 100%; }
+
+    /* Buttons — full width on mobile */
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+
+    /* Section titles */
+    .section-title { margin-bottom: 32px; }
+
+    /* Inline product buttons — full width */
+    section a[style*="inline-block"] { display: block !important; text-align: center; width: 100%; }
+  }
+
+  /* Very small screens */
+  @media (max-width: 380px) {
+    .hero-headline { font-size: 42px; }
+    nav { padding: 16px; }
   }
 </style>
 </head>
@@ -145,8 +234,8 @@
 </div>
 
 <!-- About -->
-<section style="padding: 100px 48px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+<section>
+  <div class="about-grid">
     <div>
       <p class="section-label reveal">About</p>
       <h2 class="section-title reveal" style="margin-bottom:32px;">The man<br>behind the <em>system.</em></h2>
@@ -162,7 +251,7 @@
 
 <div class="section-divider"></div>
 
-<section style="padding: 100px 48px; text-align: center;">
+<section style="text-align: center;">
   <p class="section-label reveal">Verified Results</p>
   <h2 class="section-title reveal" style="margin-bottom: 48px;">The system <em>in action.</em></h2>
   <div class="slideshow-wrap reveal">
@@ -188,14 +277,12 @@
 
 <div class="section-divider"></div>
 
-<div class="section-divider"></div>
-
 <!-- Ebook Preview -->
-<section style="padding: 100px 48px;">
+<section>
   <p class="section-label reveal">Inside The Blueprint</p>
   <h2 class="section-title reveal" style="margin-bottom: 16px;">A look <em>inside.</em></h2>
-  <p class="reveal" style="font-size:11px;color:rgba(240,237,232,0.38);letter-spacing:0.08em;line-height:1.8;max-width:500px;margin-bottom:64px;">Three chapters. Real examples. A complete system written down for the first time. Here's what's waiting inside The Breakout Blueprint.</p>
-  <div class="reveal" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+  <p class="reveal" style="font-size:11px;color:rgba(240,237,232,0.38);letter-spacing:0.08em;line-height:1.8;max-width:500px;margin-bottom:48px;">Three chapters. Real examples. A complete system written down for the first time. Here's what's waiting inside The Breakout Blueprint.</p>
+  <div class="preview-grid reveal">
     <div style="border:1px solid rgba(255,255,255,0.06);overflow:hidden;">
       <img src="preview3.png" alt="Chapter 1 - Why Most Beginners Lose" style="width:100%;display:block;filter:brightness(0.95);">
       <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.06);">
@@ -219,7 +306,7 @@
     </div>
   </div>
   <div class="reveal" style="margin-top:40px;text-align:center;">
-    <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;cursor:pointer;">Get The Blueprint — £29.99 →</a>
+    <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Get The Blueprint — £29.99 →</a>
   </div>
 </section>
 
@@ -238,7 +325,7 @@
         <div class="product-price">£34.99</div>
         <div class="product-badge">Physical</div>
       </div>
-      <a href="#" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;cursor:pointer;">Coming Soon →</a>
+      <a href="#" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Coming Soon →</a>
     </div>
     <div class="product-card reveal">
       <div class="product-number">02</div>
@@ -249,7 +336,7 @@
         <div class="product-price">£29.99</div>
         <div class="product-badge">Digital</div>
       </div>
-      <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;cursor:pointer;">Download Now →</a>
+      <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Download Now →</a>
     </div>
   </div>
 </section>
@@ -298,8 +385,6 @@
   <p class="social-desc reveal">Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.</p>
   <a href="https://x.com/InvestingVince" target="_blank" class="btn-primary reveal">Follow on X →</a>
 </section>
-
-
 
 <footer>
   <div class="footer-copy">© 2026 InvestingWithVince. All rights reserved.</div>
