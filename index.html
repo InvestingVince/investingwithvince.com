@@ -453,8 +453,9 @@
     <span class="email-pillar">Market Conditions</span>
   </div>
   <div class="reveal">
-    <div class="beehiiv-embed-wrap">
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></script>
+    <div class="email-form">
+      <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
+      <button class="email-submit" onclick="window.open('https://investingvince.beehiiv.com/subscribe?email='+encodeURIComponent(document.getElementById('email-input').value), '_blank')">Subscribe →</button>
     </div>
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
     <!-- Hidden Beehiiv form that does the actual submission -->
