@@ -449,16 +449,8 @@
     <span class="email-pillar">Market Conditions</span>
   </div>
   <div class="reveal">
-    <div class="email-form" id="email-form">
-      <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
-      <button class="email-submit" onclick="handleEmailSubmit()">Subscribe →</button>
-    </div>
+    <button onclick="document.querySelector('.beehiiv-subscribe-button, [data-beehiiv-form] button, .beehiiv-form-button') && document.querySelector('.beehiiv-subscribe-button, [data-beehiiv-form] button, .beehiiv-form-button').click(); window.__beehiiv && window.__beehiiv.openForm && window.__beehiiv.openForm();" class="email-submit" style="border:none;cursor:pointer;padding:14px 48px;font-size:11px;letter-spacing:0.15em;">Subscribe Free →</button>
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
-    <p class="email-success" id="email-success">◆ You're in. Welcome to the edge.</p>
-    <!-- Hidden Beehiiv embed form -->
-    <div id="beehiiv-hidden" style="position:absolute;opacity:0;pointer-events:none;height:0;overflow:hidden;">
-      <div data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></div>
-    </div>
     <!-- Hidden Beehiiv form that does the actual submission -->
   </div>
 </section>
@@ -507,28 +499,7 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  function handleEmailSubmit() {
-    const email = document.getElementById('email-input').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      document.getElementById('email-input').style.borderColor = 'rgba(201,168,76,0.6)';
-      return;
-    }
-    // Find the hidden Beehiiv form input and submit it
-    const beehiivInput = document.querySelector('#beehiiv-hidden input[type="email"]');
-    if (beehiivInput) {
-      beehiivInput.value = email;
-      const beehiivBtn = document.querySelector('#beehiiv-hidden button[type="submit"]');
-      if (beehiivBtn) beehiivBtn.click();
-    }
-    // Show success regardless
-    document.getElementById('email-form').style.display = 'none';
-    document.getElementById('email-success').style.display = 'block';
-  }
 
-  document.getElementById('email-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') handleEmailSubmit();
-  });
 </script>
 <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></script>
 </body>
