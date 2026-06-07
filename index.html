@@ -455,6 +455,8 @@
     </div>
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
     <p class="email-success" id="email-success">◆ You're in. Welcome to the edge.</p>
+    <!-- Hidden Beehiiv form that does the actual submission -->
+    <iframe id="beehiiv-frame" src="" style="display:none;width:0;height:0;border:0;"></iframe>
   </div>
 </section>
 
@@ -509,12 +511,20 @@
       document.getElementById('email-input').style.borderColor = 'rgba(201,168,76,0.6)';
       return;
     }
-    // Submit to Beehiiv
-    fetch('https://api.beehiiv.com/v2/publications/pub_c3e35285-840b-4a5d-b175-cddda74e48e0/subscriptions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true })
-    }).catch(() => {});
+    // Submit via hidden form POST to Beehiiv
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://embeds.beehiiv.com/c3e35285-840b-4a5d-b175-cddda74e48e0';
+    form.target = 'beehiiv-frame';
+    form.style.display = 'none';
+    const emailField = document.createElement('input');
+    emailField.type = 'email';
+    emailField.name = 'email';
+    emailField.value = email;
+    form.appendChild(emailField);
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('email-success').style.display = 'block';
   }
