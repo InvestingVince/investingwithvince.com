@@ -147,6 +147,10 @@
   .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
   .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
 
+  /* Beehiiv embed overrides */
+  .beehiiv-embed-wrap { max-width: 480px; margin: 0 auto 0; }
+  .beehiiv-embed-wrap iframe { width: 100% !important; }
+
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: none; }
@@ -449,7 +453,9 @@
     <span class="email-pillar">Market Conditions</span>
   </div>
   <div class="reveal">
-    <button onclick="document.querySelector('.beehiiv-subscribe-button, [data-beehiiv-form] button, .beehiiv-form-button') && document.querySelector('.beehiiv-subscribe-button, [data-beehiiv-form] button, .beehiiv-form-button').click(); window.__beehiiv && window.__beehiiv.openForm && window.__beehiiv.openForm();" class="email-submit" style="border:none;cursor:pointer;padding:14px 48px;font-size:11px;letter-spacing:0.15em;">Subscribe Free →</button>
+    <div class="beehiiv-embed-wrap">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></script>
+    </div>
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
     <!-- Hidden Beehiiv form that does the actual submission -->
   </div>
@@ -501,6 +507,5 @@
 
 
 </script>
-<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></script>
 </body>
 </html>
