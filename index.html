@@ -75,7 +75,6 @@
 
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 
-  /* JOURNAL SHOWCASE */
   .journal-showcase { position: relative; overflow: hidden; height: 560px; }
   .journal-showcase img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; filter: brightness(0.75); }
   .journal-showcase-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.4) 50%, rgba(8,8,8,0.1) 100%); }
@@ -126,6 +125,24 @@
   .x-handle:hover { opacity: 0.7; }
   .social-desc { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; max-width: 400px; margin: 0 auto 40px; line-height: 1.8; }
 
+  /* EMAIL CAPTURE SECTION */
+  .email-section { background: var(--black); border-top: 1px solid var(--border); padding: 100px 48px; text-align: center; }
+  .email-section-eyebrow { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .email-section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 16px; }
+  .email-section-title em { font-style: italic; color: var(--gold); }
+  .email-section-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; line-height: 1.9; max-width: 480px; margin: 0 auto 48px; }
+  .email-pillars { display: flex; justify-content: center; gap: 48px; margin-bottom: 48px; flex-wrap: wrap; }
+  .email-pillar { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); display: flex; align-items: center; gap: 8px; }
+  .email-pillar::before { content: '◆'; color: var(--gold); font-size: 5px; }
+  .email-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+  .email-input { flex: 1; background: transparent; border: 1px solid var(--border-hover); border-right: none; padding: 14px 20px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--white); outline: none; transition: border-color 0.2s; }
+  .email-input::placeholder { color: var(--muted-2); }
+  .email-input:focus { border-color: var(--gold); }
+  .email-submit { background: var(--gold); border: none; padding: 14px 28px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); cursor: pointer; font-weight: 400; transition: background 0.2s; white-space: nowrap; }
+  .email-submit:hover { background: #e0bc5a; }
+  .email-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.1em; margin-top: 16px; }
+  .email-success { display: none; font-size: 11px; letter-spacing: 0.1em; color: var(--gold); margin-top: 16px; }
+
   footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
   .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
@@ -149,6 +166,7 @@
     section { padding: 64px 20px; }
     .social-section { padding: 64px 20px; }
     .philosophy { padding: 64px 20px; }
+    .email-section { padding: 64px 20px; }
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
     .preview-grid { grid-template-columns: 1fr; gap: 16px; }
     .products-grid { grid-template-columns: 1fr; }
@@ -171,6 +189,11 @@
     .journal-showcase-overlay { background: linear-gradient(to top, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.1) 100%); }
     .journal-stats { gap: 20px; }
     .journal-desc { font-size: 10px; }
+    .email-pillars { gap: 20px; flex-direction: column; align-items: center; }
+    .email-form { flex-direction: column; }
+    .email-input { border-right: 1px solid var(--border-hover); border-bottom: none; }
+    .email-input:focus { border-color: var(--gold); }
+    .email-submit { padding: 14px; }
   }
   @media (max-width: 380px) {
     .hero-headline { font-size: 42px; }
@@ -311,7 +334,6 @@
 
 <div class="section-divider"></div>
 
-<!-- JOURNAL SHOWCASE — full bleed image with overlay copy -->
 <div class="journal-showcase reveal">
   <img src="journal-hero.png" alt="The Trading Journal by InvestingWithVince">
   <div class="journal-showcase-overlay"></div>
@@ -413,12 +435,42 @@
 
 <div class="section-divider"></div>
 
+<div class="section-divider"></div>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-section">
+  <p class="email-section-eyebrow reveal">Free. Weekly. No noise.</p>
+  <h2 class="email-section-title reveal">The edge,<br><em>weekly.</em></h2>
+  <p class="email-section-sub reveal">Watchlists. Trade breakdowns. Portfolio updates. What the system is saying — straight to your inbox every week.</p>
+  <div class="email-pillars reveal">
+    <span class="email-pillar">Weekly Watchlist</span>
+    <span class="email-pillar">Trade Breakdowns</span>
+    <span class="email-pillar">Portfolio Updates</span>
+    <span class="email-pillar">Market Conditions</span>
+  </div>
+  <div class="reveal">
+    <div class="email-form" id="email-form">
+      <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
+      <button class="email-submit" onclick="handleEmailSubmit()">Subscribe →</button>
+    </div>
+    <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
+    <p class="email-success" id="email-success">◆ You're in. First issue lands next week.</p>
+  </div>
+</section>
+
+
+<div class="section-divider"></div>
+
 <section class="social-section">
   <p class="section-label reveal">Follow The Journey</p>
   <a href="https://x.com/InvestingVince" target="_blank" class="x-handle reveal">@InvestingVince</a>
   <p class="social-desc reveal">Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.</p>
   <a href="https://x.com/InvestingVince" target="_blank" class="btn-primary reveal">Follow on X →</a>
 </section>
+
+
+<div class="section-divider"></div>
+
 
 <footer>
   <div class="footer-copy">© 2026 InvestingWithVince. All rights reserved.</div>
@@ -449,6 +501,27 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  function handleEmailSubmit() {
+    const email = document.getElementById('email-input').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      document.getElementById('email-input').style.borderColor = 'rgba(201,168,76,0.6)';
+      return;
+    }
+    // Submit to Beehiiv
+    fetch('https://api.beehiiv.com/v2/publications/pub_c3e35285-840b-4a5d-b175-cddda74e48e0/subscriptions', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, reactivate_existing: true, send_welcome_email: true })
+    }).catch(() => {});
+    document.getElementById('email-form').style.display = 'none';
+    document.getElementById('email-success').style.display = 'block';
+  }
+
+  document.getElementById('email-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') handleEmailSubmit();
+  });
 </script>
 <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="c3e35285-840b-4a5d-b175-cddda74e48e0"></script>
 </body>
