@@ -455,6 +455,10 @@
     </div>
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
     <p class="email-success" id="email-success">◆ You're in. Welcome to the edge.</p>
+    <!-- Hidden Beehiiv embed form -->
+    <div id="beehiiv-hidden" style="position:absolute;opacity:0;pointer-events:none;height:0;overflow:hidden;">
+      <div data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></div>
+    </div>
     <!-- Hidden Beehiiv form that does the actual submission -->
   </div>
 </section>
@@ -510,17 +514,22 @@
       document.getElementById('email-input').style.borderColor = 'rgba(201,168,76,0.6)';
       return;
     }
-    // Show success message immediately
+    // Find the hidden Beehiiv form input and submit it
+    const beehiivInput = document.querySelector('#beehiiv-hidden input[type="email"]');
+    if (beehiivInput) {
+      beehiivInput.value = email;
+      const beehiivBtn = document.querySelector('#beehiiv-hidden button[type="submit"]');
+      if (beehiivBtn) beehiivBtn.click();
+    }
+    // Show success regardless
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('email-success').style.display = 'block';
-    // Open Beehiiv subscribe page in new tab with email pre-filled
-    window.open('https://investingvince.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
   }
 
   document.getElementById('email-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') handleEmailSubmit();
   });
 </script>
-<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="c3e35285-840b-4a5d-b175-cddda74e48e0"></script>
+<script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="b65f516e-595a-4069-81ce-23e869affe43"></script>
 </body>
 </html>
