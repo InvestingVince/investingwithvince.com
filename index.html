@@ -456,7 +456,6 @@
     <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
     <p class="email-success" id="email-success">◆ You're in. Welcome to the edge.</p>
     <!-- Hidden Beehiiv form that does the actual submission -->
-    <iframe id="beehiiv-frame" src="" style="display:none;width:0;height:0;border:0;"></iframe>
   </div>
 </section>
 
@@ -511,22 +510,11 @@
       document.getElementById('email-input').style.borderColor = 'rgba(201,168,76,0.6)';
       return;
     }
-    // Submit via hidden form POST to Beehiiv
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://investingvince.beehiiv.com/subscribe';
-    form.target = 'beehiiv-frame';
-    form.style.display = 'none';
-    const emailField = document.createElement('input');
-    emailField.type = 'email';
-    emailField.name = 'email';
-    emailField.value = email;
-    form.appendChild(emailField);
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
+    // Show success message immediately
     document.getElementById('email-form').style.display = 'none';
     document.getElementById('email-success').style.display = 'block';
+    // Open Beehiiv subscribe page in new tab with email pre-filled
+    window.open('https://investingvince.beehiiv.com/subscribe?email=' + encodeURIComponent(email), '_blank');
   }
 
   document.getElementById('email-input').addEventListener('keypress', function(e) {
