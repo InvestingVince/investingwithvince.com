@@ -98,6 +98,7 @@
   .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); }
+  .products-grid-single { max-width: 480px; margin: 0 auto; background: transparent; border: 1px solid var(--border); }
   .product-card { background: var(--surface); padding: 48px 40px; position: relative; overflow: hidden; transition: background 0.3s; display: flex; flex-direction: column; }
   .product-card::before { content: ''; position: absolute; inset: 0; background: var(--gold-glow); opacity: 0; transition: opacity 0.3s; pointer-events: none; }
   .product-card:hover { background: var(--surface-2); }
@@ -213,7 +214,7 @@
 </nav>
 
 <section class="hero">
-  <p class="hero-eyebrow">Systematic Trading · Digital Products · Real Results</p>
+  <p class="hero-eyebrow">Systematic Trading · Trading Tools · Real Results</p>
   <div class="hero-inner">
     <div>
       <h1 class="hero-headline">Trade with<br><em>discipline.</em><br>Build with<br>purpose.</h1>
@@ -242,20 +243,20 @@
 
 <div class="ticker-wrap">
   <div class="ticker">
-    <span class="ticker-item">Breakout Blueprint</span>
     <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Discipline</span>
     <span class="ticker-item">Systematic Edge</span>
     <span class="ticker-item">@InvestingVince</span>
-    <span class="ticker-item">Breakout Blueprint</span>
     <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Process</span>
     <span class="ticker-item">Systematic Edge</span>
     <span class="ticker-item">@InvestingVince</span>
-    <span class="ticker-item">Breakout Blueprint</span>
     <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Discipline</span>
     <span class="ticker-item">Systematic Edge</span>
     <span class="ticker-item">@InvestingVince</span>
-    <span class="ticker-item">Breakout Blueprint</span>
     <span class="ticker-item">Trading Journal</span>
+    <span class="ticker-item">Process</span>
     <span class="ticker-item">Systematic Edge</span>
     <span class="ticker-item">@InvestingVince</span>
   </div>
@@ -304,40 +305,6 @@
 
 <div class="section-divider"></div>
 
-<section>
-  <p class="section-label reveal">Inside The Blueprint</p>
-  <h2 class="section-title reveal" style="margin-bottom:16px;">A look <em>inside.</em></h2>
-  <p class="reveal" style="font-size:11px;color:rgba(240,237,232,0.38);letter-spacing:0.08em;line-height:1.8;max-width:500px;margin-bottom:48px;">Three chapters. Real examples. A complete system written down for the first time. Here's what's waiting inside The Breakout Blueprint.</p>
-  <div class="preview-grid reveal">
-    <div style="border:1px solid rgba(255,255,255,0.06);overflow:hidden;">
-      <img src="preview3.png" alt="Chapter 1 - Why Most Beginners Lose" style="width:100%;display:block;filter:brightness(0.95);">
-      <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.06);">
-        <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Chapter 1</p>
-        <p style="font-size:11px;color:rgba(240,237,232,0.6);">Why Most Beginners Lose Before They Start</p>
-      </div>
-    </div>
-    <div style="border:1px solid rgba(255,255,255,0.06);overflow:hidden;">
-      <img src="preview2.png" alt="Chapter 2 - How The Market Works" style="width:100%;display:block;filter:brightness(0.95);">
-      <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.06);">
-        <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Chapter 2</p>
-        <p style="font-size:11px;color:rgba(240,237,232,0.6);">How The Market Actually Works</p>
-      </div>
-    </div>
-    <div style="border:1px solid rgba(255,255,255,0.06);overflow:hidden;">
-      <img src="preview1.png" alt="Real Example - GEV Chart" style="width:100%;display:block;filter:brightness(0.95);">
-      <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.06);">
-        <p style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Real Example</p>
-        <p style="font-size:11px;color:rgba(240,237,232,0.6);">The Breakout Blueprint In Action — GEV Weekly Chart</p>
-      </div>
-    </div>
-  </div>
-  <div class="reveal" style="margin-top:40px;text-align:center;">
-    <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Get The Blueprint — £29.99 →</a>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
 <div class="journal-showcase reveal">
   <img src="journal-hero.png" alt="The Trading Journal by InvestingWithVince">
   <div class="journal-showcase-overlay"></div>
@@ -375,7 +342,7 @@
 <section id="products">
   <p class="section-label reveal">Products</p>
   <h2 class="section-title reveal">Everything you need<br>to <em>trade systematically.</em></h2>
-  <div class="products-grid">
+  <div class="products-grid products-grid-single">
     <div class="product-card reveal">
       <div class="product-number">01</div>
       <div class="product-icon">▣</div>
@@ -386,17 +353,6 @@
         <div class="product-badge">Physical</div>
       </div>
       <a href="https://www.etsy.com/uk/listing/4523615590/the-trading-journal" target="_blank" rel="noopener" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Buy on Etsy →</a>
-    </div>
-    <div class="product-card reveal">
-      <div class="product-number">02</div>
-      <div class="product-icon">◈</div>
-      <div class="product-name">The Breakout Blueprint</div>
-      <div class="product-desc">The complete system. 50WMA filter, 10WMA management, base formation, breakout entries, risk management — every rule written down. This is the foundation of the InvestingWithVince methodology.</div>
-      <div class="product-meta">
-        <div class="product-price">£29.99</div>
-        <div class="product-badge">Digital</div>
-      </div>
-      <a href="https://whop.com/investing-with-vince/the-breakout-blueprint/" target="_blank" style="display:inline-block;margin-top:24px;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Download Now →</a>
     </div>
   </div>
 </section>
