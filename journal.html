@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Trading Journal — InvestingWithVince</title>
+<meta name="description" content="90 trading days of structured discipline. Pre-market checklists, execution scoring, weekly reviews. The journal serious traders keep on their desk.">
+
+<!-- ===================== META PIXEL ===================== -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '517991158551582');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=517991158551582&ev=PageView&noscript=1"
+/></noscript>
+<!-- =================== END META PIXEL =================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c0e; --bg2:#121215; --card:#17171b; --line:#26262c;
+    --gold:#c9a24a; --gold-soft:#e0c37e; --cream:#f2ead8; --text:#c8c6c0; --muted:#8a8880;
+    --serif:'Cormorant Garamond',serif; --sans:'Jost',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  h1,h2,h3{font-family:var(--serif);color:var(--cream);font-weight:500;line-height:1.15}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:18px}
+  .btn{display:inline-block;background:var(--gold);color:#141414;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:17px 42px;border-radius:3px;text-decoration:none;transition:.25s;border:1px solid var(--gold)}
+  .btn:hover{background:var(--gold-soft);border-color:var(--gold-soft);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--gold)}
+  .btn-ghost:hover{background:rgba(201,162,74,.08);transform:none}
+  .price-line{display:flex;align-items:baseline;gap:14px;margin:26px 0}
+  .price{font-family:var(--serif);font-size:44px;color:var(--cream)}
+  .price-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+  .gold-rule{width:56px;height:1px;background:var(--gold);margin:0 0 26px}
+  .center .gold-rule{margin:0 auto 26px}
+
+  /* Top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(12,12,14,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .brand{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream);text-decoration:none;font-weight:500}
+  .brand span{color:var(--gold)}
+  .topbar .btn{padding:11px 24px;font-size:12px}
+
+  /* Hero */
+  .hero{padding:96px 0 80px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+  .hero h1{font-size:64px;margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero .sub{font-size:18px;max-width:46ch;color:var(--text)}
+  .trust-strip{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+  .trust-strip div{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .trust-strip div b{color:var(--gold);font-weight:500;display:block;font-size:20px;font-family:var(--serif);letter-spacing:.02em}
+
+  /* CSS journal mockup — replace with real product photo when ready */
+  .mock-stage{display:flex;justify-content:center;perspective:1200px}
+  .journal{width:300px;height:420px;background:linear-gradient(145deg,#1b1b1f 0%,#101013 55%,#141418 100%);border-radius:6px 12px 12px 6px;box-shadow:0 40px 80px rgba(0,0,0,.65),0 2px 0 rgba(255,255,255,.04) inset, -18px 0 30px rgba(0,0,0,.4) inset;position:relative;transform:rotateY(-8deg) rotateX(4deg);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 30px;border:1px solid #232328}
+  .journal::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.06)}
+  .j-the{font-size:10px;letter-spacing:.5em;color:var(--muted);text-transform:uppercase;margin-bottom:14px}
+  .j-title{font-family:var(--serif);font-size:30px;color:var(--cream);letter-spacing:.14em;text-transform:uppercase;text-align:center;line-height:1.4}
+  .j-line{width:120px;height:1px;background:rgba(201,162,74,.5);margin:16px 0}
+  .j-tags{font-size:8px;letter-spacing:.34em;color:var(--muted);text-transform:uppercase;margin-top:10px}
+  .j-diamond{width:11px;height:11px;background:var(--gold);transform:rotate(45deg);margin-top:34px}
+  .j-diamond.small{width:7px;height:7px;margin-top:22px;opacity:.85}
+
+  /* Problem */
+  .dark2{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .problem h2{font-size:42px;max-width:22ch;margin-bottom:20px}
+  .problem p{max-width:64ch;margin-bottom:16px;font-size:17px}
+  .problem strong{color:var(--cream);font-weight:500}
+
+  /* Inside grid */
+  .center{text-align:center}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:32px 28px;text-align:left;transition:.25s}
+  .card:hover{border-color:rgba(201,162,74,.45);transform:translateY(-3px)}
+  .card .num{font-family:var(--serif);color:var(--gold);font-size:15px;letter-spacing:.2em;margin-bottom:12px}
+  .card h3{font-size:22px;margin-bottom:10px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  h2.sec{font-size:40px;margin-bottom:14px}
+  .sec-sub{color:var(--muted);max-width:58ch;margin:0 auto;font-size:16px}
+
+  /* Daily loop */
+  .loop{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .loop div{padding:34px 26px;border-right:1px solid var(--line);background:var(--card)}
+  .loop div:last-child{border-right:0}
+  .loop .step{font-size:11px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+  .loop h3{font-size:20px;margin-bottom:8px}
+  .loop p{font-size:13.5px;color:var(--muted)}
+
+  /* Quarter positioning */
+  .quarter{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .quarter h2{font-size:40px;margin-bottom:18px}
+  .quarter p{margin-bottom:14px}
+  .big-90{font-family:var(--serif);font-size:150px;color:var(--gold);line-height:1;text-align:center}
+  .big-90 small{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+  /* Offer */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;align-items:stretch}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:38px 30px;text-align:center;position:relative;display:flex;flex-direction:column}
+  .tier.featured{border-color:var(--gold);box-shadow:0 20px 60px rgba(201,162,74,.08)}
+  .tier .flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#141414;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;padding:6px 16px;border-radius:2px;white-space:nowrap}
+  .tier h3{font-size:22px;margin-bottom:6px}
+  .tier .t-sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+  .tier .t-price{font-family:var(--serif);font-size:42px;color:var(--cream)}
+  .tier .t-was{font-size:14px;color:var(--muted);text-decoration:line-through;margin-left:8px}
+  .tier .t-per{font-size:12px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin:6px 0 22px}
+  .tier ul{list-style:none;text-align:left;margin-bottom:28px;flex:1}
+  .tier li{font-size:14px;padding:7px 0;border-bottom:1px solid var(--line)}
+  .tier li::before{content:"◆";color:var(--gold);font-size:8px;margin-right:10px;vertical-align:2px}
+  .bump{margin-top:26px;text-align:center;font-size:14px;color:var(--muted)}
+  .bump b{color:var(--gold-soft);font-weight:500}
+
+  /* Guarantee */
+  .guarantee{border:1px solid rgba(201,162,74,.35);border-radius:6px;padding:44px;text-align:center;max-width:720px;margin:0 auto;background:var(--card)}
+  .guarantee h3{font-size:26px;margin-bottom:12px}
+  .guarantee p{font-size:15px;color:var(--muted);max-width:52ch;margin:0 auto}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:48px auto 0}
+  details{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;padding:22px 0;font-family:var(--serif);font-size:20px;color:var(--cream);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"+";color:var(--gold);font-family:var(--sans);font-size:22px;font-weight:300;transition:.2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 0 22px;font-size:15px;color:var(--muted);max-width:64ch}
+
+  /* Final CTA */
+  .final{text-align:center;padding:110px 0}
+  .final h2{font-size:52px;margin-bottom:16px}
+  .final h2 em{font-style:italic;color:var(--gold-soft)}
+  .final p{color:var(--muted);margin-bottom:34px}
+
+  footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:12px;color:#6b6a64}
+  footer .brand{display:block;margin-bottom:16px}
+  footer p{max-width:90ch;margin-bottom:10px;line-height:1.7}
+
+  @media(max-width:900px){
+    .hero .wrap,.quarter{grid-template-columns:1fr;gap:48px}
+    .grid,.tiers{grid-template-columns:1fr}
+    .loop{grid-template-columns:1fr 1fr}
+    .loop div:nth-child(2n){border-right:0}
+    .loop div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .hero h1{font-size:44px}
+    h2.sec,.problem h2,.quarter h2{font-size:32px}
+    .final h2{font-size:38px}
+    .big-90{font-size:110px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="wrap" style="justify-content:flex-end">
+    <a class="btn" href="#offer">Get the Journal</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">The Trading Journal</div>
+      <h1>Every serious desk <em>has one.</em></h1>
+      <p class="sub">90 trading days of structured discipline. Pre-market checklists, trade logs, execution scoring and weekly reviews — the exact process that separates traders who survive from traders who guess.</p>
+      <div class="price-line">
+        <span class="price">£19.99</span>
+        <span class="price-tag">Launch Price</span>
+      </div>
+      <a class="btn" href="#offer">Shop Now</a>
+      <div class="trust-strip">
+        <div><b>90</b>Trading Days</div>
+        <div><b>100</b>Pages</div>
+        <div><b>3</b>Strategy Playbooks</div>
+        <div><b>1</b>Full Quarter</div>
+      </div>
+    </div>
+    <div class="mock-stage">
+      <!-- Swap this CSS mockup for your real product photo:
+           <img src="journal-photo.jpg" alt="The Trading Journal" style="max-width:340px;border-radius:8px;box-shadow:0 40px 80px rgba(0,0,0,.6)"> -->
+      <div class="journal">
+        <div class="j-the">The</div>
+        <div class="j-line"></div>
+        <div class="j-title">Trading<br>Journal</div>
+        <div class="j-line"></div>
+        <div class="j-tags">Discipline · Process · Edge</div>
+        <div class="j-diamond"></div>
+        <div class="j-diamond small"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PROBLEM ============ -->
+<section class="dark2 problem">
+  <div class="wrap">
+    <div class="eyebrow">The Truth</div>
+    <div class="gold-rule"></div>
+    <h2>Your P&amp;L isn't the problem. Your process is.</h2>
+    <p>Most traders don't lose because their strategy is bad. They lose because they <strong>can't see their own patterns</strong> — the revenge trades, the oversized positions, the setups they took out of boredom instead of edge.</p>
+    <p>A trading journal is how professionals find those leaks. Not a spreadsheet you abandon in week two. A <strong>physical journal on your desk</strong> that makes you write it down, score it, and face it — every single session.</p>
+    <p><strong>You can't fix what you don't track.</strong></p>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INSIDE ============ -->
+<section class="center">
+  <div class="wrap">
+    <div class="eyebrow">What's Inside</div>
+    <div class="gold-rule"></div>
+    <h2 class="sec">Built like a professional trading operation</h2>
+    <p class="sec-sub">Six structured sections. Zero filler pages. Everything a disciplined trader logs, in the order they log it.</p>
+    <div class="grid">
+      <div class="card"><div class="num">01</div><h3>Trader Profile</h3><p>Define who you are as a trader — goals, style, markets and rules — before the market tests you on all four.</p></div>
+      <div class="card"><div class="num">02</div><h3>Risk Parameters</h3><p>Max risk per trade, daily loss limits, position sizing rules. Written down, so there's no negotiating with yourself mid-trade.</p></div>
+      <div class="card"><div class="num">03</div><h3>Trade Playbook</h3><p>Document your 3 core setups — entry criteria, invalidation, targets. If it's not in the playbook, you don't take it.</p></div>
+      <div class="card"><div class="num">04</div><h3>Daily Log — 90 Days</h3><p>Pre-market checklist, trade log, P&amp;L and execution scoring for every session. The engine room of the journal.</p></div>
+      <div class="card"><div class="num">05</div><h3>Weekly Review</h3><p>Every week: what worked, what leaked money, what gets fixed. Small corrections, compounded 12 times per quarter.</p></div>
+      <div class="card"><div class="num">06</div><h3>Monthly Statistics</h3><p>Win rate, average R, best and worst setups. Your own trading data — the only backtest that actually matters.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAILY LOOP ============ -->
+<section class="dark2 center">
+  <div class="wrap">
+    <div class="eyebrow">The Daily Routine</div>
+    <div class="gold-rule"></div>
+    <h2 class="sec">Four steps. Every session. No exceptions.</h2>
+    <div class="loop">
+      <div><div class="step">Before the open</div><h3>Prepare</h3><p>Run the pre-market checklist. Levels marked, setups identified, risk defined.</p></div>
+      <div><div class="step">During the session</div><h3>Log</h3><p>Record every trade as it happens — entry, size, stop, reason.</p></div>
+      <div><div class="step">Per trade</div><h3>Score</h3><p>Grade your execution, not your P&amp;L. Good process, bad outcome still scores well.</p></div>
+      <div><div class="step">After the close</div><h3>Review</h3><p>Post-market review. What did the market teach you today? Write it down.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 90 DAYS = 1 QUARTER ============ -->
+<section>
+  <div class="wrap quarter">
+    <div>
+      <div class="eyebrow">Why 90 Days</div>
+      <div class="gold-rule"></div>
+      <h2>One journal. One full trading quarter.</h2>
+      <p>90 trading days is long enough to expose every habit you have — and short enough to stay accountable to. That's why this journal is built around a quarter, the same review cycle professional funds run on.</p>
+      <p>Finish one, review your statistics, start the next. Four journals is a full trading year and a complete written record of your evolution as a trader.</p>
+    </div>
+    <div class="big-90">90<small>Trading Days</small></div>
+  </div>
+</section>
+
+<!-- ============ OFFER ============ -->
+<section class="dark2 center" id="offer">
+  <div class="wrap">
+    <div class="eyebrow">Get Yours</div>
+    <div class="gold-rule"></div>
+    <h2 class="sec">Choose your commitment</h2>
+    <p class="sec-sub">One journal covers a full trading quarter. Free UK delivery on every order.</p>
+    <div class="tiers">
+
+      <div class="tier">
+        <h3>Single Journal</h3>
+        <div class="t-sub">90 Days &middot; 1 Quarter</div>
+        <div class="t-price">&pound;19.99</div>
+        <div class="t-per">&pound;19.99 per journal</div>
+        <ul>
+          <li>The Trading Journal (hardcover)</li>
+          <li>90 daily logs + weekly reviews</li>
+          <li>Trade playbook &amp; risk pages</li>
+          <li>Free UK delivery</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://www.etsy.com/uk/listing/4523615590/trading-journal-daily-log-weekly-review" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','InitiateCheckout',{value:19.99,currency:'GBP',content_name:'Trading Journal - Single'});}">Buy Single</a>
+      </div>
+
+      <div class="tier featured">
+        <div class="flag">Most Popular</div>
+        <h3>2 Pack</h3>
+        <div class="t-sub">2 Journals &middot; 6 Months</div>
+        <div class="t-price">&pound;34.99<span class="t-was">&pound;39.98</span></div>
+        <div class="t-per">&pound;17.50 per journal</div>
+        <ul>
+          <li>2&times; The Trading Journal</li>
+          <li>Save &pound;4.99 vs buying separately</li>
+          <li>Six months of structured discipline</li>
+          <li>Free UK delivery</li>
+        </ul>
+        <a class="btn" href="https://www.etsy.com/uk/listing/4540514238/trading-journal-2-pack-hardcover-daily" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','InitiateCheckout',{value:34.99,currency:'GBP',content_name:'Trading Journal - 2 Pack'});}">Buy 2 Pack</a>
+      </div>
+
+      <div class="tier">
+        <h3>Year Set</h3>
+        <div class="t-sub">4 Journals &middot; 12 Months</div>
+        <div class="t-price">&pound;59.99<span class="t-was">&pound;79.96</span></div>
+        <div class="t-per">&pound;15.00 per journal</div>
+        <ul>
+          <li>4&times; The Trading Journal</li>
+          <li>Save &pound;19.97 vs buying separately</li>
+          <li>A full year, written down</li>
+          <li>Free UK delivery</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://www.etsy.com/uk/listing/4540499479/trading-journal-year-set-4-pack-daily" target="_blank" rel="noopener" onclick="if(window.fbq){fbq('track','InitiateCheckout',{value:59.99,currency:'GBP',content_name:'Trading Journal - Year Set'});}">Buy Year Set</a>
+      </div>
+
+    </div>
+    <p class="bump">Prefer typing to writing? The <b>Fillable PDF edition</b> is &pound;7.99 in our Etsy shop.</p>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE ============ -->
+<section class="center">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="eyebrow">Our Promise</div>
+      <h3>Returns &amp; exchanges</h3>
+      <p>Accepted within 30 days of delivery, in line with the returns policy on the Etsy listing. If anything arrives damaged or isn't right, message me through Etsy and I'll sort it out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="dark2 center">
+  <div class="wrap">
+    <div class="eyebrow">Questions</div>
+    <div class="gold-rule"></div>
+    <h2 class="sec">Frequently asked</h2>
+    <div class="faq">
+      <details>
+        <summary>Who is this journal for?</summary>
+        <p>Day traders and swing traders in any market — stocks, indices, forex, crypto. If you take trades and want to stop repeating the same mistakes, it's built for you. Complete beginners can use it from day one; the structure teaches the process.</p>
+      </details>
+      <details>
+        <summary>Why a physical journal instead of an app or spreadsheet?</summary>
+        <p>Writing by hand forces you to slow down and actually process the trade. Apps get ignored; a journal sitting on your desk next to your keyboard doesn't. The friction is the feature.</p>
+      </details>
+      <details>
+        <summary>How long does one journal last?</summary>
+        <p>90 trading days — roughly one quarter of active trading, or longer if you don't trade daily. 100 pages total including profile, playbook, weekly reviews and monthly statistics.</p>
+      </details>
+      <details>
+        <summary>What are the specs?</summary>
+        <p>Hardcover, matte black finish with gold detailing, 100 premium pages, lay-flat binding. Designed to look at home on a serious desk.</p>
+      </details>
+      <details>
+        <summary>Do you ship internationally?</summary>
+        <p>Yes — orders ship from the UK with tracking. Delivery times and rates are shown at checkout.</p>
+      </details>
+      <details>
+        <summary>Is this financial advice?</summary>
+        <p>No. The journal is an educational and organisational tool. Nothing in it, or on this site, is financial advice or a recommendation to trade any instrument.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow">InvestingWithVince</div>
+    <h2>Discipline is a habit.<br><em>Start writing it down.</em></h2>
+    <p>Launch price won't last. Your next 90 trading days start today.</p>
+    <a class="btn" href="#offer">Get the Journal — £19.99</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">Investing<span>With</span>Vince</span>
+    <p>© 2026 InvestingWithVince. All rights reserved.</p>
+    <p><strong>Disclaimer:</strong> All content produced by InvestingWithVince, including this product, is for educational purposes only and does not constitute financial advice. Trading involves substantial risk of loss and is not suitable for everyone. Past performance is not indicative of future results. Always do your own research and consider seeking advice from an independent financial adviser regulated by the FCA.</p>
+  </div>
+</footer>
+
+</body>
+</html>
