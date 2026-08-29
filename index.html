@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InvestingWithVince</title>
-<meta name="description" content="Systematic trading education, tools and journals for retail traders. For educational purposes only. Not financial advice.">
-<meta name="keywords" content="trading education, trading journal, breakout trading, systematic trading, stock market, swing trading">
+<meta name="description" content="A free weekly markets newsletter and a physical trading journal. Education only — no signals, no tips, no picks. Not financial advice.">
+<meta name="keywords" content="trading journal, markets newsletter, trading process, trade log, investing education, market commentary">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K909NVWPMX"></script>
 <script>
@@ -53,7 +53,7 @@
   .stat-item { display: flex; flex-direction: column; }
   .stat-item + .stat-item { border-top: 1px solid var(--border); padding-top: 32px; margin-top: 32px; }
   .stat-number { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(48px, 5vw, 64px); line-height: 1; color: var(--gold); letter-spacing: -0.02em; display: flex; align-items: baseline; gap: 10px; }
-  .stat-number .stat-suffix { font-size: clamp(24px, 2.5vw, 36px); letter-spacing: -0.01em; }
+  .stat-number .stat-suffix { font-size: clamp(20px, 2vw, 28px); letter-spacing: 0.02em; }
   .stat-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 
   .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: var(--gold); color: var(--black); font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; font-weight: 400; transition: all 0.2s ease; }
@@ -90,12 +90,11 @@
   .journal-desc { font-size: 11px; line-height: 1.9; color: var(--muted); margin-bottom: 28px; max-width: 380px; }
   .journal-price { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--gold); margin-bottom: 20px; }
 
-  .slideshow-wrap { position: relative; max-width: 360px; margin: 0 auto; }
-  .slideshow { overflow: hidden; }
-  .slide { display: none; }
-  .slide.active { display: block; }
-
-  .preview-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .inside-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); }
+  .inside-card { background: var(--surface); padding: 36px 32px; }
+  .inside-num { font-size: 9px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 16px; }
+  .inside-title { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .inside-desc { font-size: 10px; line-height: 1.8; color: var(--muted); }
 
   .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); }
   .products-grid-single { max-width: 480px; margin: 0 auto; background: transparent; border: 1px solid var(--border); }
@@ -126,7 +125,6 @@
   .x-handle:hover { opacity: 0.7; }
   .social-desc { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; max-width: 400px; margin: 0 auto 40px; line-height: 1.8; }
 
-  /* EMAIL CAPTURE SECTION */
   .email-section { background: var(--black); border-top: 1px solid var(--border); padding: 100px 48px; text-align: center; }
   .email-section-eyebrow { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
   .email-section-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 16px; }
@@ -142,15 +140,10 @@
   .email-submit { background: var(--gold); border: none; padding: 14px 28px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); cursor: pointer; font-weight: 400; transition: background 0.2s; white-space: nowrap; }
   .email-submit:hover { background: #e0bc5a; }
   .email-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.1em; margin-top: 16px; }
-  .email-success { display: none; font-size: 11px; letter-spacing: 0.1em; color: var(--gold); margin-top: 16px; }
 
   footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
   .footer-copy { font-size: 10px; color: var(--muted-2); letter-spacing: 0.1em; }
-  .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 500px; line-height: 1.6; text-align: right; }
-
-  /* Beehiiv embed overrides */
-  .beehiiv-embed-wrap { max-width: 480px; margin: 0 auto 0; }
-  .beehiiv-embed-wrap iframe { width: 100% !important; }
+  .footer-disclaimer { font-size: 9px; color: var(--muted-2); letter-spacing: 0.05em; max-width: 560px; line-height: 1.6; text-align: right; }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -173,15 +166,13 @@
     .philosophy { padding: 64px 20px; }
     .email-section { padding: 64px 20px; }
     .about-grid { grid-template-columns: 1fr; gap: 32px; }
-    .preview-grid { grid-template-columns: 1fr; gap: 16px; }
     .products-grid { grid-template-columns: 1fr; }
     .product-card { padding: 32px 24px; }
     .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
     .philosophy-quote { font-size: clamp(20px, 5vw, 28px); padding-left: 20px; }
     .pillars { grid-template-columns: 1fr; }
     .pillar { padding: 24px 20px; }
-    .slideshow-wrap { max-width: 100%; }
-    .slide img { height: 260px !important; }
+    .inside-grid { grid-template-columns: 1fr; }
     .x-handle { font-size: clamp(32px, 10vw, 52px); word-break: break-word; }
     .social-desc { max-width: 100%; }
     footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
@@ -197,7 +188,6 @@
     .email-pillars { gap: 20px; flex-direction: column; align-items: center; }
     .email-form { flex-direction: column; }
     .email-input { border-right: 1px solid var(--border-hover); border-bottom: none; }
-    .email-input:focus { border-color: var(--gold); }
     .email-submit { padding: 14px; }
   }
   @media (max-width: 380px) {
@@ -210,32 +200,32 @@
 
 <nav id="nav">
   <div class="nav-logo">Investing<span>Vince</span></div>
-  <a href="https://x.com/InvestingVince" target="_blank" class="nav-x">@InvestingVince ↗</a>
+  <a href="https://x.com/InvestingVince" target="_blank" rel="noopener" class="nav-x">@InvestingVince ↗</a>
 </nav>
 
 <section class="hero">
-  <p class="hero-eyebrow">Systematic Trading · Trading Tools · Real Results</p>
+  <p class="hero-eyebrow">Weekly Market Notes · Trading Journal · Education Only</p>
   <div class="hero-inner">
     <div>
-      <h1 class="hero-headline">Trade with<br><em>discipline.</em><br>Build with<br>purpose.</h1>
-      <p class="hero-sub">A trading system, a growing portfolio, and the tools to help you do the same. No noise. No hype. Just process.</p>
+      <h1 class="hero-headline">Process over<br><em>prediction.</em><br>Every<br>week.</h1>
+      <p class="hero-sub">A free weekly newsletter on what moved the markets and why — plus a physical journal for recording and reviewing your own decisions. No signals. No tips. No hype.</p>
       <div class="hero-cta">
-        <a href="#products" class="btn-primary">Explore Products →</a>
-        <a href="https://x.com/InvestingVince" target="_blank" class="btn-ghost">Follow on X ↗</a>
+        <a href="https://investingvince.beehiiv.com" target="_blank" rel="noopener" class="btn-primary">Read the Newsletter →</a>
+        <a href="https://www.etsy.com/uk/listing/4523615590/the-trading-journal" target="_blank" rel="noopener" class="btn-ghost">Buy the Journal →</a>
       </div>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-number">90.15%</div>
-        <div class="stat-label">1-Year Verified Return</div>
+        <div class="stat-number">52<span class="stat-suffix">/yr</span></div>
+        <div class="stat-label">Weekly Market Notes. Free.</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">42.59%</div>
-        <div class="stat-label">3-Month Return</div>
+        <div class="stat-number">100</div>
+        <div class="stat-label">Pages. The Trading Journal.</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">2<span class="stat-suffix">Yrs</span></div>
-        <div class="stat-label">Trading Publicly. Every Trade Posted.</div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Signals, Tips or Picks. Ever.</div>
       </div>
     </div>
   </div>
@@ -243,21 +233,21 @@
 
 <div class="ticker-wrap">
   <div class="ticker">
+    <span class="ticker-item">Weekly Market Notes</span>
     <span class="ticker-item">Trading Journal</span>
-    <span class="ticker-item">Discipline</span>
-    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">Education Only</span>
     <span class="ticker-item">@InvestingVince</span>
+    <span class="ticker-item">Weekly Market Notes</span>
     <span class="ticker-item">Trading Journal</span>
-    <span class="ticker-item">Process</span>
-    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">Education Only</span>
     <span class="ticker-item">@InvestingVince</span>
+    <span class="ticker-item">Weekly Market Notes</span>
     <span class="ticker-item">Trading Journal</span>
-    <span class="ticker-item">Discipline</span>
-    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">Education Only</span>
     <span class="ticker-item">@InvestingVince</span>
+    <span class="ticker-item">Weekly Market Notes</span>
     <span class="ticker-item">Trading Journal</span>
-    <span class="ticker-item">Process</span>
-    <span class="ticker-item">Systematic Edge</span>
+    <span class="ticker-item">Education Only</span>
     <span class="ticker-item">@InvestingVince</span>
   </div>
 </div>
@@ -266,46 +256,20 @@
   <div class="about-grid">
     <div>
       <p class="section-label reveal">About</p>
-      <h2 class="section-title reveal" style="margin-bottom:32px;">The man<br>behind the <em>system.</em></h2>
+      <h2 class="section-title reveal" style="margin-bottom:32px;">Built for<br>the <em>boring part.</em></h2>
     </div>
     <div class="reveal">
-      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">Two years ago I was trading with no edge, no system, and no results to show for it. The early days were rough — trial, error, and a lot of lessons the market teaches you the hard way.</p>
-      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">Everything changed when I stopped guessing and built a system. Rules-based entries. Hard stops. A process that repeats regardless of emotion. That's when the results followed.</p>
-      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">The edge is simple — spotting the winners before they run. Identifying the setups, the bases, the breakouts — before the crowd piles in. Systematic, repeatable, scalable.</p>
-      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);">The goal is full freedom. Location independent. Financially independent. Building in public so others can follow the same path.</p>
+      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">Most market content is designed to make you act. Buy this, watch that, don't miss out. Very little of it helps you understand what's actually happening or why it matters to a long-term plan.</p>
+      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">This platform does two things. The weekly note explains what moved markets and why, in plain English — earnings, rates, inflation, and the reasoning behind the headlines. No calls, no positions, no urgency.</p>
+      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);margin-bottom:20px;">The journal handles the other half: a structured way to record your own decisions and the reasons behind them, so you can review your process over months instead of relying on memory. Outcomes are noisy. Reasoning is where the patterns live.</p>
+      <p style="font-size:11px;line-height:2;color:rgba(240,237,232,0.38);">Read the note to understand the market. Use the journal to understand yourself. That's the whole offer — no signals, no tips, no picks.</p>
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<section style="text-align:center;">
-  <p class="section-label reveal">Verified Results</p>
-  <h2 class="section-title reveal" style="margin-bottom:48px;">The system <em>in action.</em></h2>
-  <div class="slideshow-wrap reveal">
-    <div class="slideshow">
-      <div class="slide active" id="slide-0">
-        <img src="result1.png" alt="90.15% return in 1 year" style="width:100%;height:400px;object-fit:contain;display:block;background:#0a0a0a;">
-      </div>
-      <div class="slide" id="slide-1">
-        <img src="result2.png" alt="42.59% return in 3 months" style="width:100%;height:400px;object-fit:contain;display:block;background:#0a0a0a;">
-      </div>
-      <div class="slide" id="slide-2">
-        <img src="result3.png" alt="37.5% rate of return" style="width:100%;height:400px;object-fit:contain;display:block;background:#0a0a0a;">
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;align-items:center;gap:24px;margin-top:20px;">
-      <button onclick="changeSlide(-1)" style="background:transparent;border:1px solid rgba(255,255,255,0.1);color:#c9a84c;font-size:18px;width:40px;height:40px;cursor:pointer;">←</button>
-      <span id="slide-counter" style="font-size:10px;letter-spacing:0.2em;color:rgba(240,237,232,0.3);">1 / 3</span>
-      <button onclick="changeSlide(1)" style="background:transparent;border:1px solid rgba(255,255,255,0.1);color:#c9a84c;font-size:18px;width:40px;height:40px;cursor:pointer;">→</button>
-    </div>
-  </div>
-  <p style="font-size:9px;letter-spacing:0.2em;color:rgba(240,237,232,0.2);margin-top:24px;text-transform:uppercase;">Past performance is not indicative of future results</p>
-</section>
-
-<div class="section-divider"></div>
-
-<div class="journal-showcase reveal">
+<div class="journal-showcase reveal" id="journal">
   <img src="journal-hero.png" alt="The Trading Journal by InvestingWithVince">
   <div class="journal-showcase-overlay"></div>
   <div class="journal-showcase-content">
@@ -326,11 +290,11 @@
           <div class="journal-stat-label">Trade Days</div>
         </div>
         <div>
-          <div class="journal-stat-num">1</div>
-          <div class="journal-stat-label">System</div>
+          <div class="journal-stat-num">0</div>
+          <div class="journal-stat-label">Tips Inside</div>
         </div>
       </div>
-      <p class="journal-desc">Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews. Everything your process demands — in one physical book.</p>
+      <p class="journal-desc">Pre-market checklists, trade logs, P&amp;L tracking, execution scoring, weekly and monthly reviews. A structured way to record your own decisions and review them honestly. Blank pages — you supply the trades.</p>
       <div class="journal-price">£19.99</div>
       <a href="https://www.etsy.com/uk/listing/4523615590/the-trading-journal" target="_blank" rel="noopener" style="display:inline-block;padding:14px 28px;background:#c9a84c;color:#080808;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;font-weight:400;">Buy on Etsy →</a>
     </div>
@@ -339,15 +303,44 @@
 
 <div class="section-divider"></div>
 
+<section>
+  <p class="section-label reveal">What's Inside</p>
+  <h2 class="section-title reveal">Built for <em>reviewing,</em><br>not predicting.</h2>
+  <div class="inside-grid reveal">
+    <div class="inside-card">
+      <div class="inside-num">01</div>
+      <div class="inside-title">Pre-market checklist</div>
+      <div class="inside-desc">A written plan before the session starts, so decisions are made in advance rather than in the moment.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">02</div>
+      <div class="inside-title">Trade log</div>
+      <div class="inside-desc">Entry, exit, size, and — the part most people skip — the reason you took it.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">03</div>
+      <div class="inside-title">Execution scoring</div>
+      <div class="inside-desc">Rate how well you followed your own rules, separately from whether the trade made money.</div>
+    </div>
+    <div class="inside-card">
+      <div class="inside-num">04</div>
+      <div class="inside-title">Weekly &amp; monthly review</div>
+      <div class="inside-desc">Structured pages for spotting your own patterns over time instead of guessing at them.</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
 <section id="products">
   <p class="section-label reveal">Products</p>
-  <h2 class="section-title reveal">Everything you need<br>to <em>trade systematically.</em></h2>
+  <h2 class="section-title reveal">One product.<br><em>Done properly.</em></h2>
   <div class="products-grid products-grid-single">
     <div class="product-card reveal">
       <div class="product-number">01</div>
       <div class="product-icon">▣</div>
       <div class="product-name">Trading Journal</div>
-      <div class="product-desc">100 pages. 90 trading days. Built for traders who take their edge seriously. Pre-market checklists, trade logs, P&L tracking, execution scoring, weekly and monthly reviews — all in one physical book.</div>
+      <div class="product-desc">100 pages. 90 trading days. Pre-market checklists, trade logs, P&amp;L tracking, execution scoring, weekly and monthly reviews — all in one physical book. A tool for recording your process, not a guide telling you what to buy.</div>
       <div class="product-meta">
         <div class="product-price">£19.99</div>
         <div class="product-badge">Physical</div>
@@ -363,30 +356,30 @@
   <p class="section-label reveal">The Approach</p>
   <div class="philosophy-grid">
     <div>
-      <h2 class="section-title reveal" style="margin-bottom:32px;">System over<br><em>emotion.</em></h2>
+      <h2 class="section-title reveal" style="margin-bottom:32px;">Process over<br><em>emotion.</em></h2>
       <div class="philosophy-text reveal">
-        <p>Most traders lose because they let emotion override process. A bad day becomes a blown account. A good week becomes overconfidence. The market exploits both.</p>
-        <p>The InvestingWithVince system removes the guesswork. Rules-based entries. Hard stops. Systematic position sizing. The same process, every day, regardless of how it feels.</p>
-        <p>Consistency compounds. Discipline builds accounts. That's the only edge worth having.</p>
+        <p>Most people don't struggle because they picked the wrong stock. They struggle because position sizes were too large to survive being wrong, or because a plan written in calm conditions got abandoned in volatile ones.</p>
+        <p>Recording decisions changes that. Not the outcome of a trade — the reasoning behind it. Over months, written reasons reveal patterns that memory quietly edits out.</p>
+        <p>None of it is exciting. Checklists, logs, honest reviews. But it's the part you actually control, and it's the only part worth writing about.</p>
       </div>
     </div>
     <div class="reveal">
-      <blockquote class="philosophy-quote">"The market doesn't care about your opinion. It only rewards your process."</blockquote>
+      <blockquote class="philosophy-quote">"The market doesn't care about your opinion. It only reveals your process."</blockquote>
       <div class="pillars">
         <div class="pillar">
           <div class="pillar-num">01</div>
-          <div class="pillar-title">Active Trading</div>
-          <div class="pillar-desc">Day trades + swing trades. Systematic entries. 8-10% hard stop. No exceptions.</div>
+          <div class="pillar-title">Weekly Notes</div>
+          <div class="pillar-desc">What moved markets and why, written in plain English. Free, every week.</div>
         </div>
         <div class="pillar">
           <div class="pillar-num">02</div>
-          <div class="pillar-title">Education</div>
-          <div class="pillar-desc">Tools, journals, and frameworks to give you the same systematic edge.</div>
+          <div class="pillar-title">The Journal</div>
+          <div class="pillar-desc">A structured book for logging and reviewing your own decisions.</div>
         </div>
         <div class="pillar">
           <div class="pillar-num">03</div>
-          <div class="pillar-title">More Coming Soon</div>
-          <div class="pillar-desc">New products and resources in development. Stay tuned.</div>
+          <div class="pillar-title">Education Only</div>
+          <div class="pillar-desc">No signals, no tips, no picks, no paid promotions. Not financial advice.</div>
         </div>
       </div>
     </div>
@@ -395,61 +388,53 @@
 
 <div class="section-divider"></div>
 
-<div class="section-divider"></div>
-
-<!-- EMAIL CAPTURE -->
-<section class="email-section">
+<section class="email-section" id="newsletter">
   <p class="email-section-eyebrow reveal">Free. Weekly. No noise.</p>
-  <h2 class="email-section-title reveal">The edge,<br><em>weekly.</em></h2>
-  <p class="email-section-sub reveal">Watchlists. Trade breakdowns. Portfolio updates. What the system is saying — straight to your inbox every week.</p>
+  <h2 class="email-section-title reveal">The week,<br><em>observed.</em></h2>
+  <p class="email-section-sub reveal">A plain-English breakdown of what moved markets and why — earnings, rates, inflation, and the stories behind the numbers. Written for people who want to understand markets, not be told what to do in them.</p>
   <div class="email-pillars reveal">
-    <span class="email-pillar">Weekly Watchlist</span>
-    <span class="email-pillar">Trade Breakdowns</span>
-    <span class="email-pillar">Portfolio Updates</span>
-    <span class="email-pillar">Market Conditions</span>
+    <span class="email-pillar">Weekly Recap</span>
+    <span class="email-pillar">Earnings in Plain English</span>
+    <span class="email-pillar">Rates &amp; Inflation</span>
+    <span class="email-pillar">Process Notes</span>
   </div>
   <div class="reveal">
     <div class="email-form">
       <input type="email" class="email-input" id="email-input" placeholder="your@email.com" autocomplete="email">
-      <button class="email-submit" onclick="window.open('https://investingvince.beehiiv.com/subscribe?email='+encodeURIComponent(document.getElementById('email-input').value), '_blank')">Subscribe →</button>
+      <button class="email-submit" id="email-submit">Subscribe →</button>
     </div>
-    <p class="email-disclaimer">No spam. Unsubscribe anytime. For educational purposes only.</p>
-    <!-- Hidden Beehiiv form that does the actual submission -->
+    <p class="email-disclaimer">No spam. Unsubscribe anytime. General market commentary for educational purposes only — never a recommendation to buy or sell.</p>
   </div>
 </section>
-
 
 <div class="section-divider"></div>
 
 <section class="social-section">
-  <p class="section-label reveal">Follow The Journey</p>
-  <a href="https://x.com/InvestingVince" target="_blank" class="x-handle reveal">@InvestingVince</a>
-  <p class="social-desc reveal">Daily trade setups, system updates, portfolio transparency, and the real journey of building a trading empire. No fluff. Follow along on X.</p>
-  <a href="https://x.com/InvestingVince" target="_blank" class="btn-primary reveal">Follow on X →</a>
+  <p class="section-label reveal">Follow Along</p>
+  <a href="https://x.com/InvestingVince" target="_blank" rel="noopener" class="x-handle reveal">@InvestingVince</a>
+  <p class="social-desc reveal">Short market notes, lessons from the process, and the occasional uncomfortable truth about investing. Education, not advice.</p>
+  <a href="https://x.com/InvestingVince" target="_blank" rel="noopener" class="btn-primary reveal">Follow on X →</a>
 </section>
-
 
 <div class="section-divider"></div>
 
-
 <footer>
   <div class="footer-copy">© 2026 InvestingWithVince. All rights reserved.</div>
-  <div class="footer-disclaimer">For educational purposes only. Not financial advice. Trading involves significant risk of loss. Past performance is not indicative of future results.</div>
+  <div class="footer-disclaimer">All content is general information and education only. Nothing here is financial advice or a personal recommendation, and no content should be relied on when making investment decisions. Investing puts your capital at risk and you may get back less than you put in. Seek independent regulated advice where appropriate.</div>
 </footer>
 
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
 
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
-  function changeSlide(dir) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + dir + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    document.getElementById('slide-counter').textContent = (currentSlide + 1) + ' / ' + slides.length;
+  const submitBtn = document.getElementById('email-submit');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      const val = document.getElementById('email-input').value.trim();
+      const base = 'https://investingvince.beehiiv.com/subscribe';
+      window.open(val ? base + '?email=' + encodeURIComponent(val) : base, '_blank', 'noopener');
+    });
   }
-  setInterval(() => changeSlide(1), 4000);
 
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -461,8 +446,6 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
-
-
 </script>
 <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="c3e35285-840b-4a5d-b175-cddda74e48e0"></script>
 </body>
