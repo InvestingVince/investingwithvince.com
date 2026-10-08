@@ -1,0 +1,36 @@
+name: add-journal-photos
+on:
+  push:
+    paths:
+      - .github/workflows/add-journal-photos.yml
+permissions:
+  contents: write
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the journal photographs
+        run: |
+          curl -fsSL -o cover.jpg "https://n.uguu.se/FVEJTzPp.jpg"
+          curl -fsSL -o page-1.jpg "https://d.uguu.se/WQPefDnS.jpg"
+          curl -fsSL -o page-2.jpg "https://d.uguu.se/nQpfQbKo.jpg"
+          curl -fsSL -o page-3.jpg "https://n.uguu.se/FVFYwEgu.jpg"
+          curl -fsSL -o page-8.jpg "https://n.uguu.se/ZaFOsctv.jpg"
+          curl -fsSL -o page-51.jpg "https://n.uguu.se/nXKlvKPQ.jpg"
+          for f in cover.jpg page-1.jpg page-2.jpg page-3.jpg page-8.jpg page-51.jpg; do
+            b=$(od -An -tx1 -N2 "$f" | tr -d ' \n')
+            test "$b" = "ffd8" || exit 1
+            echo "$f $(wc -c < "$f")"
+          done
+      - name: Commit the photographs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cover.jpg page-1.jpg page-2.jpg page-3.jpg page-8.jpg page-51.jpg
+          if git diff --cached --quiet; then
+            echo "no photo changes"
+            exit 0
+          fi
+          git commit -m "Add journal photographs"
+          git push
