@@ -2,7 +2,7 @@ import base64
 import pathlib
 import sys
 
-root = pathlib.Path("journal/parts")
+root = pathlib.Path("journal/final")
 out = pathlib.Path("journal")
 stems = ["cover", "page-1", "page-2", "page-3", "page-8", "page-51"]
 for stem in stems:
