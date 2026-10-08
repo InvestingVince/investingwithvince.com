@@ -1,0 +1,31 @@
+name: fix-ticks
+on:
+  push:
+    paths:
+      - .github/workflows/fix-ticks.yml
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace the broken tick code
+        run: |
+          python3 - << 'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          t = p.read_text()
+          old = '.assure li::before{content:"\\u2713";margin-right:10px;color:var(--gold)}'
+          new = '.assure li::before{content:"\\2713 ";margin-right:10px;color:var(--gold)}'
+          if old not in t:
+              raise SystemExit("pattern missing")
+          p.write_text(t.replace(old, new, 1))
+          PY
+      - name: Commit the ticks
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Show ticks instead of the character code"
+          git push
