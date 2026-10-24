@@ -1,0 +1,13 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Thank you | MarketBullion</title>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','517991158551582');fbq('track','PageView');
+/* Stripe redirect: thank-you.html?pack=1|2|4 (or ?value=44.99). Optional &session_id={CHECKOUT_SESSION_ID} used to fire once per order. */
+(function(){var P={"1":24.99,"2":44.99,"4":79.99},q=new URLSearchParams(location.search),pk=q.get("pack")||"1",v=parseFloat(q.get("value"))||P[pk]||24.99,sid=q.get("session_id"),k="mb_purchase_"+(sid||"");
+try{if(sid&&localStorage.getItem(k))return;if(sid)localStorage.setItem(k,"1")}catch(e){}
+fbq('track','Purchase',{value:v,currency:'GBP',content_name:'Trading Journal - '+pk+' pack',num_items:+pk||1},sid?{eventID:sid}:undefined)})();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0b0b;color:#f2e8d5;font:400 16px/1.6 Jost,sans-serif;text-align:center;padding:24px}h1{font-family:"Cormorant Garamond",serif;font-size:2.6rem;margin:10px 0}.d{color:#c9a24a;letter-spacing:.35em;font-size:.8rem}p{color:#a8a090;max-width:440px;margin:8px auto}a{display:inline-block;margin-top:22px;padding:14px 28px;border:1px solid #c9a24a;color:#e2c271;text-decoration:none;border-radius:4px}</style></head>
+<body><div><div class="d">◆ MARKETBULLION ◆</div><h1>Thank you for your order</h1><p>Your Trading Journal is on its way with free UK delivery. You'll get a confirmation email shortly.</p><p>If it arrives damaged, we'll replace it free.</p><a href="/">Back to MarketBullion</a></div></body></html>
