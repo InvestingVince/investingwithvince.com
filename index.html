@@ -74,11 +74,11 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <p class="stock"><i></i>In stock, ready to ship</p>
 <p class="d" style="margin-top:6px">Choose your bundle</p>
 <div class="opts" id="opts"></div>
-<a class="btn" id="buy" href="#" target="_blank" rel="noopener"><span id="buyt">Buy now: £24.99</span><small>Secure checkout on Etsy</small></a>
+<a class="btn" id="buy" href="#" target="_blank" rel="noopener"><span id="buyt">Buy now: £24.99</span><small>Secure checkout with Stripe</small></a>
 <div class="acc">
 <details open><summary>What's inside</summary><p><b>Part one: your rules.</b> Risk limits, setups and your playbook, written down before you trade.</p><p><b>Part two: 90 days of accountability.</b> A daily log for every session, 18 weekly reviews, monthly stats and a full quarter review.</p></details>
 <details><summary>Features & benefits</summary><div class="fb"><div><p class="d">Features</p><ul><li>90 daily trade logs</li><li>18 weekly reviews</li><li>Monthly stats pages</li><li>Risk rules & playbook pages</li><li>Quarter review</li><li>Premium matte hardcover, gold detailing</li></ul></div><div><p class="d">Benefits</p><ul><li>A written plan before every session</li><li>A record of why you took each trade</li><li>Spot repeat mistakes week by week</li><li>Undated: start any day</li></ul></div></div></details>
-<details><summary>Shipping & returns</summary><p>Free UK delivery on every order. You order and pay through Etsy, so Etsy's purchase protection applies.</p></details>
+<details><summary>Shipping & returns</summary><p>Free UK delivery on every order. Pay securely by card through Stripe.</p></details>
 <details><summary>Guarantee</summary><p>If your journal arrives damaged, message us and we'll replace it free.</p></details>
 </div></div></div></div>
 <section id="inside"><div class="w"><p class="d">What's inside</p><h2>One quarter. Every trade on paper.</h2><div class="grid">
@@ -93,7 +93,7 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <section><div class="w"><p class="d">Buy with confidence</p><h2>Simple and safe</h2><div class="trust">
 <div class="t"><b>Free UK delivery</b><span class="tiny">On every hardcover.</span></div>
 <div class="t"><b>Damage guarantee</b><span class="tiny">Arrives damaged? We'll replace it free.</span></div>
-<div class="t"><b>Secure checkout</b><span class="tiny">Pay through Etsy, covered by Etsy Purchase Protection.</span></div>
+<div class="t"><b>Secure checkout</b><span class="tiny">Secure card payment through Stripe.</span></div>
 <div class="t"><b>A new brand</b><span class="tiny">No wall of reviews yet. Just a journal we built to use ourselves.</span></div></div></div></section>
 <section id="faq"><div class="w"><p class="d">FAQ</p><h2>Questions</h2>
 <details><summary>How long does it last?</summary><p>One trading quarter: 90 daily logs, 18 weekly reviews, monthly stats and a quarter review.</p></details>
@@ -105,13 +105,13 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <footer><div class="w">© 2026 MarketBullion · The Trading Journal. General information and education only, not financial advice. Trading puts your capital at risk.</div></footer>
 <div class="sb" id="sb"><div><b>The Trading Journal</b><div class="tiny" id="sbp">£24.99 · Free UK delivery</div></div><a class="btn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Buy now</a></div>
 <script>
-/* ===== EDIT CHECKOUT LINKS HERE (swap Etsy for Stripe Payment Links later) ===== */
+/* ===== EDIT CHECKOUT LINKS HERE (Stripe Payment Links) ===== */
 var OPTIONS=[
- {id:"single",name:"1 Journal",note:"One quarter (90 days)",price:24.99,url:"https://www.etsy.com/uk/listing/4523615590?utm_source=website&utm_medium=landing&utm_campaign=v3"},
- {id:"two",name:"2 Journals",note:"Two quarters, or one for a friend",price:44.99,was:49.98,url:"https://www.etsy.com/uk/listing/4540514238?utm_source=website&utm_medium=landing&utm_campaign=v3"},
- {id:"year",name:"Year Set: 4 Journals",note:"A full trading year",price:79.99,was:99.96,tag:"Best value",url:"https://www.etsy.com/uk/listing/4540499479?utm_source=website&utm_medium=landing&utm_campaign=v3"}
+ {id:"single",name:"1 Journal",note:"One quarter (90 days)",price:24.99,url:"https://buy.stripe.com/bJedRbbsA1rf1oCdsP7ok02"},
+ {id:"two",name:"2 Journals",note:"Two quarters, or one for a friend",price:44.99,was:49.98,url:"https://buy.stripe.com/6oU14p0NW1rf2sG88v7ok03"},
+ {id:"year",name:"Year Set: 4 Journals",note:"A full trading year",price:79.99,was:99.96,tag:"Best value",url:"https://buy.stripe.com/eVq28t9ks5Hv7N0fAX7ok04"}
 ];
-var CHECKOUT_LABEL="Secure checkout on Etsy";
+var CHECKOUT_LABEL="Secure checkout with Stripe";
 /* ============================================================================ */
 (function(){
 var o=document.getElementById("opts"),buy=document.getElementById("buy"),sel=0;
