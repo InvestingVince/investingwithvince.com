@@ -55,7 +55,6 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 .steps,.trust{display:grid;gap:14px}.step,.t{border:1px solid var(--line);padding:20px;border-radius:6px;background:var(--bg2)}.step span{color:var(--gold)}.t b{display:block;color:var(--gold2)}.tiny{font-size:.85rem;color:var(--mute);margin:0}
 .perks{list-style:none;padding:0;margin:0;display:grid;gap:4px;color:var(--gold2);font-size:.95rem}.acc details:first-child{border-top:1px solid var(--line)}.fb{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fb ul{padding-left:18px}.sb{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(11,11,11,.96);border-top:1px solid var(--gold);padding:10px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .3s}.sb.on{transform:none}.sb b{font-family:"Cormorant Garamond",serif;font-size:1.1rem}.sb .btn{min-height:46px;font-size:1rem;padding:6px 20px}footer{padding-bottom:90px}
 .final{text-align:center}.final .btn{max-width:420px;margin:20px auto 0}footer{padding:30px 0;color:var(--mute);font-size:.78rem;border-top:1px solid var(--line)}
-.pop{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}.pop.on{display:flex}
 .box{position:relative;max-width:420px;width:100%;background:var(--bg);border:1px solid var(--gold);border-radius:8px;padding:32px 26px;text-align:center;display:grid;gap:12px}
 .box .x{position:absolute;top:8px;right:12px;background:none;border:0;color:var(--mute);font-size:1.6rem;cursor:pointer}.box input[type=email]{width:100%;padding:14px;border-radius:4px;border:1px solid var(--line);background:var(--bg2);color:var(--cream);font:inherit}
 .big{font-family:"Cormorant Garamond",serif;font-size:3.2rem;color:var(--gold2);line-height:1}
@@ -105,12 +104,6 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <section class="final"><div class="w"><h2>Stop repeating last week.</h2><p class="sub">Start the next 90 days with every trade written down.</p><a class="btn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Choose your journals</a></div></section>
 <footer><div class="w">© 2026 MarketBullion · The Trading Journal. General information and education only, not financial advice. Trading puts your capital at risk.</div></footer>
 <div class="sb" id="sb"><div><b>The Trading Journal</b><div class="tiny" id="sbp">£24.99 · Free UK delivery</div></div><a class="btn" href="#top" onclick="scrollTo({top:0,behavior:'smooth'});return false">Buy now</a></div>
-<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popt"><div class="box">
-<button class="x" id="popx" aria-label="Close">×</button>
-<p class="d">Members' offer</p><div class="big">10% OFF</div><h3 id="popt">your next order</h3>
-<p class="tiny">Join the MarketBullion list for 10% off your next order.</p>
-<form id="popf"><input type="email" name="email_address" required placeholder="Your email" autocomplete="email"><button class="btn" type="submit" style="width:100%;margin-top:10px">Get my 10% off</button></form>
-<p class="tiny" id="popmsg"></p></div></div>
 <script>
 /* ===== EDIT CHECKOUT LINKS HERE (swap Etsy for Stripe Payment Links later) ===== */
 var OPTIONS=[
@@ -119,8 +112,6 @@ var OPTIONS=[
  {id:"year",name:"Year Set: 4 Journals",note:"A full trading year",price:79.99,was:99.96,tag:"Best value",url:"https://www.etsy.com/uk/listing/4540499479?utm_source=website&utm_medium=landing&utm_campaign=v3"}
 ];
 var CHECKOUT_LABEL="Secure checkout on Etsy";
-/* ===== EMAIL CAPTURE: set to your Kit form action, e.g. "https://app.kit.com/forms/1234567/subscriptions" ===== */
-var KIT_FORM_ACTION="";
 /* ============================================================================ */
 (function(){
 var o=document.getElementById("opts"),buy=document.getElementById("buy"),sel=0;
@@ -135,14 +126,6 @@ var g=document.querySelectorAll(".gi"),t=document.querySelectorAll(".th"),c=0;
 function show(i){c=(i+g.length)%g.length;g.forEach(function(e,j){e.classList.toggle("on",j==c)});t.forEach(function(e,j){e.classList.toggle("on",j==c)})}
 t.forEach(function(e,j){e.onclick=function(){show(j)}});document.querySelector(".nav.p").onclick=function(){show(c-1)};document.querySelector(".nav.n").onclick=function(){show(c+1)};show(0);
 var sx=0,m=document.querySelector(".main");m.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});m.addEventListener("touchend",function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(c+(dx<0?1:-1))});
-/* popup */
-var p=document.getElementById("pop"),K="mb_pop_seen";
-function close(){p.classList.remove("on");try{localStorage.setItem(K,"1")}catch(e){}}
-try{if(!localStorage.getItem(K))setTimeout(function(){p.classList.add("on");try{localStorage.setItem(K,"1")}catch(e){}},5000)}catch(e){}
-document.getElementById("popx").onclick=close;p.onclick=function(e){if(e.target==p)close()};addEventListener("keydown",function(e){if(e.key=="Escape")close()});
-document.getElementById("popf").onsubmit=function(e){e.preventDefault();var msg=document.getElementById("popmsg");
- if(!KIT_FORM_ACTION){msg.textContent="Sign-ups open soon. Thanks for your interest.";return}
- fetch(KIT_FORM_ACTION,{method:"POST",body:new FormData(this),headers:{Accept:"application/json"}}).then(function(){msg.textContent="Thanks, check your inbox for your code.";if(window.fbq)fbq('track','Lead')}).catch(function(){msg.textContent="Something went wrong, please try again."})};
 })();
 </script>
 </body></html>
