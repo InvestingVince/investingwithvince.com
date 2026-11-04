@@ -1,0 +1,27 @@
+name: speed-images
+on:
+  push:
+    paths:
+      - .github/workflows/speed-images.yml
+permissions:
+  contents: write
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unpack compressed images and swap in the new page
+        run: |
+          base64 -d img.tar.b64 | tar xzf -
+          ls -la img
+          test -f img/see-03-daily-log.webp
+          mv index.new.html index.html
+          git rm -q --cached img.tar.b64 index.new.html
+          rm -f img.tar.b64
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html img
+          git commit -m "Speed: images as compressed files, ad-match headline, See inside strip, dispatch line"
+          git push
