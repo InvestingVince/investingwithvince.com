@@ -1,0 +1,18 @@
+name: remove-helpers
+on:
+  push:
+    paths:
+      - .github/workflows/remove-helpers.yml
+permissions:
+  contents: write
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/workflows/speed-images.yml .github/workflows/remove-helpers.yml
+          git commit -m "Remove one-off helper Actions"
+          git push
