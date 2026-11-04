@@ -66,6 +66,8 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 #trader-pack{border-top:1px solid #3a3220;border-bottom:1px solid #3a3220}.tpg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}.tpi{border:1px solid #3a3220;padding:14px;text-align:center}.tpt{height:170px;display:flex;justify-content:center;margin-bottom:10px}.tpt img,.tpt svg{height:170px;width:auto;max-width:120px;object-fit:cover}.tpi h3{font-size:1rem;color:#c9a24a;margin:4px 0}.tpi p{font-size:.85rem;color:#bbb;margin:0}
 @media(max-width:760px){.tpg{grid-template-columns:1fr 1fr;gap:12px}.tpt,.tpt img,.tpt svg{height:130px}}.pain{list-style:none;padding:0;margin:4px 0;display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--gold2)}.pain li::before{content:"\2713  "}.cost{padding:28px 0;text-align:center}.cost p{margin:0;font-size:1.15rem;color:var(--cream)}html{scroll-padding-top:10px}
 .h1b{margin:-4px 0 0;color:var(--gold2);font-size:clamp(1.05rem,3.5vw,1.3rem)}body{padding-bottom:76px}
+@media(max-width:899px){.pdp{padding-top:14px;gap:14px}.main{aspect-ratio:auto;height:30vh;max-height:30vh}.gal .thumbs,.gal .nav{display:none}.gi:not([data-i="0"]){display:none}
+.panel{gap:10px}.panel>.d:first-child{display:none}.panel h1{font-size:min(7.2vw,2rem);white-space:nowrap}.panel h1{order:1}.h1b{order:2}#choose{display:none}#opts{order:4}#buy{order:5}.panel .stock{order:6}.panel .dsp{order:7}.panel .pain{order:8}.panel .sub{order:9}.panel .price{order:11}.panel .tpbadge{order:12}.panel .tfree{order:13}.panel .perks{order:14}.panel .acc{order:15}.opt{padding:10px 14px}.tag{white-space:nowrap}}
 </style></head><body>
 <div class="ann">Free UK delivery + free Trader Pack with every journal</div>
 <header>◆ MARKETBULLION ◆</header>
@@ -76,7 +78,6 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <p class="d">MarketBullion · The Trading Journal</p>
 <h1>Red day? Read back why.</h1>
 <p class="h1b">Your memory lies. Your journal doesn't.</p>
-<ul class="pain"><li>Overtraded</li><li>Revenge trade</li><li>Moved your stop</li></ul>
 <p class="sub" style="color:var(--cream)">Your app logs the numbers. Only you can write down why. 90 days, every trade on paper.</p>
 <p class="sub">Trade with a plan, not a feeling. A full trading quarter in one premium matte hardcover with gold detailing, built to make you write every trade down and review it.</p>
 <div class="price" id="price">£24.99<small>Free UK delivery</small></div>
@@ -84,10 +85,11 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <ul class="tfree"><li>Free Risk Desk calculator</li><li>Free My Rules sheet</li><li>Free Pre-Market Checklist</li><li>Free 24 phone &amp; desktop wallpapers</li></ul>
 <ul class="perks"><li>+ Damage guarantee: free replacement</li><li>+ Secure checkout</li></ul>
 <p class="stock"><i></i>In stock, ready to ship</p>
-<p class="tiny">Start your quarter on Monday. Dispatched within 2 working days, free UK delivery.</p>
+<p class="tiny dsp">Start your quarter on Monday. Dispatched within 2 working days, free UK delivery.</p>
 <p class="d" id="choose" style="margin-top:6px">Choose your bundle</p>
 <div class="opts" id="opts"></div>
 <a class="btn" id="buy" href="#" target="_blank" rel="noopener"><span id="buyt">Start my 90 days: £24.99</span><small>Free UK delivery + Trader Pack</small></a>
+<ul class="pain"><li>Overtraded</li><li>Revenge trade</li><li>Moved your stop</li></ul>
 <div class="acc">
 <details><summary>Features & benefits</summary><div class="fb"><div><p class="d">Features</p><ul><li>90 daily trade logs</li><li>18 weekly reviews</li><li>Monthly stats pages</li><li>Risk rules & playbook pages</li><li>Quarter review</li><li>Premium matte hardcover, gold detailing</li></ul></div><div><p class="d">Benefits</p><ul><li>A written plan before every session</li><li>A record of why you took each trade</li><li>Spot repeat mistakes week by week</li><li>Undated: start any day</li></ul></div></div></details>
 <details><summary>Shipping & returns</summary><p>Free UK delivery on every order. Change your mind within 14 days? Reply to your order receipt and we'll refund you. Pay securely by card through Stripe.</p></details>
@@ -126,9 +128,9 @@ section{padding:56px 0;border-top:1px solid var(--line)}
 <details><summary>What if I don't like it?</summary><p>Change your mind within 14 days? Reply to your order receipt and we'll refund you. If it arrives damaged, we'll replace it free.</p></details>
 </div></section>
 <section class="cost"><div class="w"><p>Change your mind within 14 days? Reply to your order receipt and we'll refund you.</p></div></section>
-<section class="final"><div class="w"><h2>Stop repeating last week.</h2><p class="sub">Start the next 90 days with every trade written down.</p><a class="btn" href="#choose">Start my 90 days</a></div></section>
+<section class="final"><div class="w"><h2>Stop repeating last week.</h2><p class="sub">Start the next 90 days with every trade written down.</p><a class="btn" href="#shop">Start my 90 days</a></div></section>
 <footer><div class="w">© 2026 MarketBullion · The Trading Journal. General information and education only, not financial advice. Trading puts your capital at risk.</div></footer>
-<div class="sb" id="sb"><div><b>The Trading Journal</b><div class="tiny" id="sbp">£24.99 · Free UK delivery</div></div><a class="btn" href="#choose">Start my 90 days</a></div>
+<div class="sb" id="sb"><div><b>The Trading Journal</b><div class="tiny" id="sbp">£24.99 · Free UK delivery</div></div><a class="btn" href="#shop">Start my 90 days</a></div>
 <script>
 /* ===== EDIT CHECKOUT LINKS HERE (Stripe Payment Links) ===== */
 var OPTIONS=[
